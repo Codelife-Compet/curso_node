@@ -42,7 +42,7 @@ Aqui serão adicionados links considerados úteis para o prosseguimento do apren
 
 - [Vídeo-aulas de Node](https://www.youtube.com/watch?v=LLqq6FemMNQ&list=PLJ_KhUnlXUPtbtLwaxxUxHqvcNQndmI4B&index=1)
 
--[GitFlow](https://www.atlassian.com/br/git/tutorials/comparing-workflows/gitflow-workflow)
+- [GitFlow](https://www.atlassian.com/br/git/tutorials/comparing-workflows/gitflow-workflow)
 
 ## Dependências
 
