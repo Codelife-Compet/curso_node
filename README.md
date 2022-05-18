@@ -44,18 +44,18 @@ Aqui serão adicionados links considerados úteis para o prosseguimento do apren
 
 - [GitFlow](https://www.atlassian.com/br/git/tutorials/comparing-workflows/gitflow-workflow)
 
-## Dependências
+## Dependências e Módulos
 
-Cada capítulo possui algumas dependências para seu pleno funcionamento. Aqui listamos por capítulos cada pacote instalado, e a forma como foi instalado.
+Cada capítulo possui algumas dependências e módulos necessários para seu pleno funcionamento. Aqui listamos por capítulos cada pacote instalado, e a forma como foi instalado.
 
 ### Capítulo 2
 
-Dependência | código | Utilização
+Dependência | código | Exemplo de utilização
 :---:|:---:|:---:
-Nodemon | `npm install --save-dev nodemon` | nodemon código.js
-
+Nodemon | `npm install --save-dev nodemon` | `nodemon código.js`
+http ( módulo padrão do node ) | `const http= require('http')` | `http.createServer()`
+fs ( módulo padrão do node ) |  `const fs= require('fs')` | `fs.readFile()`
 ---
-
 ## Arquitetura dos exemplos
 
 Cada capítulo possuirá notas importantes para serem lidas posteriormente, bem como a estrutura dos exemplos contidos no livro.
