@@ -10,25 +10,25 @@ O objetivo deste repositório é desenvolver habilidades práticas de desenvolvi
 
 ## Tecnologias utilizadas
 
--[ ] HTML,CSS e JS
+- [ ] HTML,CSS e JS
 
--[ ] git e gitHub
+- [ ] git e gitHub
 
--[ ] Markdown
+- [ ] Markdown
 
--[ ] Node.js
+- [ ] Node.js
 
--[ ] Express.js
+- [ ] Express.js
 
--[ ] Bootstrap
+- [ ] Bootstrap
 
--[ ] puppeteer.js
+- [ ] puppeteer.js
 
--[ ] handlebars
+- [ ] handlebars
 
--[ ] MongoDB
+- [ ] MongoDB
 
--[ ] jest
+- [ ] jest
 
 ## Links úteis
 
