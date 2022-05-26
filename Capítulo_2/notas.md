@@ -56,3 +56,15 @@ npm run <script>
 ```
 
 Onde no nosso exemplo, substituímos \<script> por dev.
+
+### Sobre o segundo exemplo
+
+O segundo exemplo do capítulo 2 nos introduz algumas novidades em relação ao primeiro, que são:
+
+- A utilização do que chamamos de roteamento
+
+- Servindo arquivos estáticos html no nosso site
+
+- A utilização do módulo fs para leitura de arquivos
+
+- A atribuição de códigos de resposta do servidor.

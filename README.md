@@ -56,6 +56,7 @@ Nodemon | `npm install --save-dev nodemon` | `nodemon código.js`
 http ( módulo padrão do node ) | `const http= require('http')` | `http.createServer()`
 fs ( módulo padrão do node ) |  `const fs= require('fs')` | `fs.readFile()`
 ---
+
 ## Arquitetura dos exemplos
 
 Cada capítulo possuirá notas importantes para serem lidas posteriormente, bem como a estrutura dos exemplos contidos no livro.
