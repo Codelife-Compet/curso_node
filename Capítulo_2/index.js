@@ -3,7 +3,7 @@ const fs = require('fs');
 const port = process.env.PORT || 3000;
 
 function serveStaticFile(res, path, contentType, responseCode = 200) {
-    fs.readFileSync(__dirname + path, (err, data) => {
+    fs.readFile(__dirname + path, (err, data) => {
             if (err) {
                 res.writeHead(500, { 'Content-Type': 'text/plain' });
                 return res.end('500 - erro no servidor!');
@@ -24,7 +24,10 @@ const server = http.createServer((req, res) => {
         case '':
             serveStaticFile(res, '/public/home.html', 'text/html');
             break;
-        case 'img/logo.png':
+        case '/about':
+            serveStaticFile(res, '/public/about.html', 'text/html');
+            break;
+        case '/img/logo.png':
             serveStaticFile(res, '/public/img/logo.png', 'image/png');
             break;
         default:
@@ -34,4 +37,4 @@ const server = http.createServer((req, res) => {
 })
 
 server.listen(port, () => console.log(`Servidor iniciou na porta ${port};` +
-    'Aperte Ctrl+C para fecha-lo'));
+    '\nAperte Ctrl+C para fecha-lo'));
