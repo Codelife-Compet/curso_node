@@ -33,5 +33,5 @@ const server = http.createServer((req, res) => {
     }
 })
 
-server.listen(port, () => console.log(`Servidor iniciou na porta $(port);` +
+server.listen(port, () => console.log(`Servidor iniciou na porta ${port};` +
     'Aperte Ctrl+C para fecha-lo'));
