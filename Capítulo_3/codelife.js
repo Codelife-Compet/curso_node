@@ -1,24 +1,30 @@
-const express = require('express') 
+const express = require('express')
+const expressHandlebars = require('express-handlebars') 
 const app = express()
-const port = process.env.PORT||3000
+const port = process.env.PORT || 3000
+
+const engineHandlebars = expressHandlebars.engine({
+    defaultLayout:'main'
+})
+app.engine('handlebars',engineHandlebars)
 app.get('/', (req, res) => {
     res.type('text/plain')
-    res.send('Aqui ficaria a página principal do codelife')
+    res.render('home')
 })
 app.get('/about', (req, res) => {
     res.type('text/plain')
-    res.send('Aqui ficaria a página sobre o codelife por exemplo')
+    res.render('about')
 })
 app.use((err, req, res, next) => {
     res.type('text/plain')
     res.status(404)
-    res.send('404 - Página não encontrada')
+    res.render('404')
 })
 app.use((err, req, res, next) => {
     console.error(err.message)
     res.type('text/plain')
     res.status(500)
-    res.send('500 - Erro no servidor')
+    res.render('500')
 })
 
 
