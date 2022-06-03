@@ -15,6 +15,7 @@ app.get('/about', (req, res) => {
     res.type('text/plain')
     res.render('about')
 })
+app.use(express.static(__dirname+'/public'))
 app.use((err, req, res, next) => {
     res.type('text/plain')
     res.status(404)
