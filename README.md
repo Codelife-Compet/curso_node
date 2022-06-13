@@ -36,7 +36,7 @@ Aqui serão adicionados links considerados úteis para o prosseguimento do apren
 
 - [Markdown](https://github.com/DavidAnson/markdownlint/blob/v0.23.1/doc/Rules.md#md001)
 
-- [Curso de Node.JS em Projeto CodeLife.pdf](https://github.com/Codelife-Compet/curso_node/files/8882998/Curso.de.Node.JS.em.Projeto.CodeLife._.Trello.pdf)
+- [Web_Development_with_Node_and_Express_Leveraging_the_JavaScript_Stack_by_Ethan_Brown_(z-lib.org).pdf](https://github.com/Codelife-Compet/curso_node/files/8893487/Web_Development_with_Node_and_Express_Leveraging_the_JavaScript_Stack_by_Ethan_Brown_.z-lib.org.pdf)
 
 - [Node e Express](https://github.com/EthanRBrown/web-development-with-node-and-express-2e)
 
