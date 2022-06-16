@@ -1,0 +1,21 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+div.fortuneCookie{
+    position: absolute;
+    margin: auto;
+    left: 40px;
+    right: 40px;
+}
+div.fortuneCookie>blockquote{
+    position: relative;
+    margin: auto;
+    background-color: #000000;
+    color: white;
+    margin: 10px;
+    padding: 20px;
+    border: solid 2px green;
+    text-align: center;
+    width: 200px;
+}

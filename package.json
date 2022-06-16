@@ -5,7 +5,8 @@
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "dev": "nodemon Capítulo_2/helloworld.js"
+        "dev": "nodemon Capítulo_2/helloworld.js",
+        "start":"nodemon Capítulo_3/codelife.js"
     },
     "repository": {
         "type": "git",

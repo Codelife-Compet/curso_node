@@ -2,7 +2,14 @@
     Testando sua sorte
 </h1>
 <p>O conteúdo a seguir é gerado aleatoriamente no servidor</p>
+{{#if codelifer}}
+<div class="codelifer">
+<p>E ai {{codelifer}}, a sorte de hoje é:</p>
+</div>
+{{/if}}
 {{#if fortune}}
-<p>E ai codelifer, a sorte de hoje é:</p>
+<div class="fortuneCookie">
 <blockquote>{{fortune}}</blockquote>
+
+</div>
 {{/if}}
