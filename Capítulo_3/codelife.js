@@ -40,14 +40,14 @@ app.get('/about', (req, res) => {
     res.render('about');
 });
 app.use((err, req, res, next) => {
-    res.status(404);
-    res.render('404');
-});
-app.use((err, req, res, next) => {
     console.error(err.message);
     res.status(500);
     res.render('500');
 });
+app.use((err, req, res, next) => {
+    res.status(404);
+    res.render('404');
+});
 
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+app.listen(port, () => console.log(`Example app listening on http://localhost:${port} !`));
