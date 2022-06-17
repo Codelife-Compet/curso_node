@@ -31,11 +31,9 @@ const server = http.createServer((req, res) => {
             serveStaticFile(res, '/public/compet.html', 'text/html');
             break;
         case '/img/logo.png':
-            serveStaticFile(res, '/public/imagens/logo.png', 'image/png');
+            serveStaticFile(res, '/public/img/logo.png', 'image/png');
             break;
-        case '/img/logo2.png':
-            serveStaticFile(res, '/public/imagens/logo2.png', 'image/png');
-            break;
+        
         default:
             serveStaticFile(res, '/public/404.html', 'text/html', 404);
             break;
