@@ -11,7 +11,7 @@ const engineHandlebars = expressHandlebars.engine({
 app.engine('handlebars', engineHandlebars);
 app.set('view engine', 'handlebars')
 app.use(express.static(__dirname + '/public'))
-
+app.set('views', __dirname + "/views")
 
 // Pages renders
 
