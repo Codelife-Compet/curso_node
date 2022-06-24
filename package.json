@@ -2,7 +2,7 @@
     "name": "curso_node",
     "version": "1.0.0",
     "description": "Curso node",
-    "main": "Capitulo_3/meadowlark.js",
+    "main": "Capítulo_3/meadowlark.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "cap3-canônico": "nodemon Capítulo_3/meadowlark.js",
