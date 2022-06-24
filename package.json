@@ -2,10 +2,10 @@
     "name": "curso_node",
     "version": "1.0.0",
     "description": "Curso node",
-    "main": "index.js",
+    "main": "Capitulo_3/meadowlark.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "dev": "nodemon Capítulo_2/helloworld.js"
+        "dev": "nodemon Capitulo_3/meadowlark.js"
     },
     "repository": {
         "type": "git",
@@ -19,5 +19,9 @@
     "homepage": "https://github.com/Codelife-Compet/curso_node#readme",
     "devDependencies": {
         "nodemon": "^2.0.16"
+    },
+    "dependencies": {
+        "express": "^4.18.1",
+        "express-handlebars": "^6.0.6"
     }
 }

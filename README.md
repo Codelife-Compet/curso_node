@@ -59,6 +59,17 @@ http ( módulo padrão do node ) | `const http= require('http')` | `http.createS
 fs ( módulo padrão do node ) |  `const fs= require('fs')` | `fs.readFile()`
 ---
 
+### Capítulo 3
+
+Dependência | comando de uso/instalação | Exemplo de utilização
+:---:|:---:|:---:
+Express| `npm install express` | `const express = require('express')`
+express-handlebars | `npm install express-handlebars` | `const expressHandlebars = require('express-handlebars')`
+Nodemon | `npm install --save-dev nodemon` | `nodemon código.js`
+http ( módulo padrão do node ) | `const http = require('http')` | `http.createServer()`
+fs ( módulo padrão do node ) |  `const fs = require('fs')` | `fs.readFile()`
+---
+
 ## Arquitetura dos exemplos
 
 Cada capítulo possuirá notas importantes para serem lidas posteriormente, bem como a estrutura dos exemplos contidos no livro.
