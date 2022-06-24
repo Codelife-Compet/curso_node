@@ -2,11 +2,10 @@
     "name": "curso_node",
     "version": "1.0.0",
     "description": "Curso node",
-    "main": "Capítulo_3/meadowlark.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "cap3-canônico": "nodemon Capítulo_3/meadowlark.js",
-        "cap3-codelife":"nodemon Capítulo_3/codelife.js",
+        "cap3canônico": "nodemon Capítulo_3/meadowlark.js",
+        "codelife": "nodemon Capítulo_3/codelife.js",
         "cap2": "nodemon Capítulo_2/index.js"
     },
     "repository": {
@@ -19,11 +18,11 @@
         "url": "https://github.com/Codelife-Compet/curso_node/issues"
     },
     "homepage": "https://github.com/Codelife-Compet/curso_node#readme",
-    "devDependencies": {
-        "nodemon": "^2.0.16"
-    },
     "dependencies": {
         "express": "^4.18.1",
         "express-handlebars": "^6.0.6"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.18"
     }
 }

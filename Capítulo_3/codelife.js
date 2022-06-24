@@ -31,7 +31,7 @@ app.get('/', (req, res) => {
 });
 app.set('views', __dirname+'/views');
 
-app.get('/fortune', (req, res) => {
+app.get('/fortunes', (req, res) => {
     const codelifer = codelifers[Math.floor(Math.random() * codelifers.length)];
     const fortune = fortunes[Math.floor(Math.random() * fortunes.length)];
     res.render('cookieSort',{codelifer:codelifer,fortune:fortune});
