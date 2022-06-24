@@ -36,6 +36,8 @@ Aqui serão adicionados links considerados úteis para o prosseguimento do apren
 
 - [Markdown](https://github.com/DavidAnson/markdownlint/blob/v0.23.1/doc/Rules.md#md001)
 
+- [Web_Development_with_Node_and_Express_Leveraging_the_JavaScript_Stack_by_Ethan_Brown_(z-lib.org).pdf](https://github.com/Codelife-Compet/curso_node/files/8893487/Web_Development_with_Node_and_Express_Leveraging_the_JavaScript_Stack_by_Ethan_Brown_.z-lib.org.pdf)
+
 - [Node e Express](https://github.com/EthanRBrown/web-development-with-node-and-express-2e)
 
 - [git e github](https://git-scm.com/book/pt-br/v2/Come%C3%A7ando-Instalando-o-Git)
@@ -43,7 +45,6 @@ Aqui serão adicionados links considerados úteis para o prosseguimento do apren
 - [Vídeo-aulas de Node](https://www.youtube.com/watch?v=LLqq6FemMNQ&list=PLJ_KhUnlXUPtbtLwaxxUxHqvcNQndmI4B&index=1)
 
 - [GitFlow](https://www.atlassian.com/br/git/tutorials/comparing-workflows/gitflow-workflow)
-- [Ebook](https://github.com/Keyology/DS-club-pdf-books/blob/master/Web%20Development%20With%20Node%20and%20Express_%20Leveraging%20the%20JavaScript%20Stack%20-%20Ethan%20Brown.pdf)
 
 ## Dependências e Módulos
 
