@@ -2,10 +2,10 @@
     "name": "curso_node",
     "version": "1.0.0",
     "description": "Curso node",
-    "main": "index.js",
+    "main": "Capitulo_3/meadowlark.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "dev": "nodemon Capítulo_2/helloworld.js"
+        "dev": "nodemon Capitulo_3/meadowlark.js"
     },
     "repository": {
         "type": "git",
