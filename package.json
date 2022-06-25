@@ -4,9 +4,9 @@
     "description": "Curso node",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "cap3canônico": "nodemon Capítulo_3/meadowlark.js",
-        "codelife": "nodemon Capítulo_3/codelife.js",
-        "cap2": "nodemon Capítulo_2/index.js"
+        "cap3canônico": "nodemon Cap_3/meadowlark.js",
+        "codelife": "nodemon Cap_3/codelife.js",
+        "cap2": "nodemon Cap_2/index.js"
     },
     "repository": {
         "type": "git",
