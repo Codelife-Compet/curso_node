@@ -5,7 +5,9 @@
     "main": "Capitulo_3/meadowlark.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "dev": "nodemon Capitulo_3/meadowlark.js"
+        "cap_2": "nodemon Cap_2/index.js",
+        "cap_3-canonico": "nodemon Cap_3/meadowlark.js",
+        "cap_3-codelife": "nodemon Cap_2/codelife.js"
     },
     "repository": {
         "type": "git",
