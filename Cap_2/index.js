@@ -12,7 +12,7 @@ function serveStaticFile(res, path, contentType, responseCode = 200) {
             res.end(data);
         })
         /*
-        Essa função lê de forma síncrona os arquivos que são passados para ela
+        Essa função lê de forma assíncrona os arquivos que são passados para ela
         como parâmetro no diretório path e retorna para o servidor os dados do
         arquivo com código 200 ou um erro com o código 500.
         */
@@ -33,7 +33,9 @@ const server = http.createServer((req, res) => {
         case '/img/logo.png':
             serveStaticFile(res, '/public/img/logo.png', 'image/png');
             break;
-        
+        case '/membros':
+            serveStaticFile(res, '/public/img/cefet.png', 'image/png');
+            break;        
         default:
             serveStaticFile(res, '/public/404.html', 'text/html', 404);
             break;
