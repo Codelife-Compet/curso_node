@@ -44,8 +44,21 @@ Este é um repositório de aprendizado, então, caso você tenha chegado recente
 
 ## Clonando o projeto
 
-Primeiramente baixe o git no seu computador através deste [link](https://git-scm.com/downloads) e instale-o na sua máquina:
+Primeiramente certifique-se de ter seguido o tópico [Instalando e configurando o git](#instalando-e-configurando-o-git), se já o fez, basta copiar o link de contribuição do repositório:
 
+![cloneCodelife](https://user-images.githubusercontent.com/67330930/177046265-080696ad-ae99-4ce0-a737-0d575ab9e4b3.gif)
+
+E usar o seguinte comando no terminal do seu computador: 
+
+```bash
+$ git clone <link-de-contribuição-do-repositório>
+
+```
+>Lembre-se de abrir o terminal na pasta onde quiser clonar o projeto
+
+![cloneCodelifeTutorial](https://user-images.githubusercontent.com/67330930/177046540-7c3f9199-dc16-41af-a61f-84ba4010a019.gif)
+
+> cd curso_node abre a pasta que foi criada a partir do clone do projeto
 
 ## Links úteis
 
@@ -63,7 +76,11 @@ Aqui serão adicionados links considerados úteis para o prosseguimento do apren
 
 * [GitFlow](https://www.atlassian.com/br/git/tutorials/comparing-workflows/gitflow-workflow)
 
-## I
+## Instalando e configurando o git
+Primeiramente baixe o git no seu computador através deste [link](https://git-scm.com/downloads) e instale-o na sua máquina:
+
+![gitTutorialINstalation](https://user-images.githubusercontent.com/67330930/177046006-05ad1227-a783-42ef-aed1-71a17cdb4908.gif)
+
 ## Dependências e Módulos
 
 Cada capítulo possui algumas dependências e módulos necessários para seu pleno funcionamento. Aqui listamos por capítulos cada pacote instalado, e a forma como foi instalado.
