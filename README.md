@@ -42,7 +42,7 @@ Este é um repositório de aprendizado, então, caso você tenha chegado recente
 4. **Habitue-se a aprender**:
     Há muitas tecnologias envolvidas no desenvolvimento web, mas a base do desenvolvimento web não é abordado nesse livro. Se você é um total iniciante em programação, busque aprender a base (javascript,HTML e CSS), recomendo muito a plataforma [DIO](https://www.dio.me/sign-in) para isso.
 
-## Clonando o projeto
+### Clonando o projeto
 
 Primeiramente certifique-se de ter seguido o tópico [Instalando e configurando o git](#instalando-e-configurando-o-git), se já o fez, basta copiar o link de contribuição do repositório:
 
@@ -58,7 +58,41 @@ $ git clone <link-de-contribuição-do-repositório>
 
 ![cloneCodelifeTutorial](https://user-images.githubusercontent.com/67330930/177046540-7c3f9199-dc16-41af-a61f-84ba4010a019.gif)
 
-> cd curso_node abre a pasta que foi criada a partir do clone do projeto
+> cd curso_node abre a pasta que foi criada a partir do clone do projeto, e então você tem acesso a todo o conteúdo desenvolvido separado por capítulos.
+
+Instale as dependências do projeto utilizando 
+
+```bash
+$ npm install
+```
+![npmInstall](https://user-images.githubusercontent.com/67330930/177047608-6ea058e7-7580-4a1b-8a6a-c080e7e13f15.gif)
+
+>Certifique-se de estar no diretório raíz do projeto (./curso_node)
+### Comandos no package.json
+
+Como estamos utilizando o módulo nodemon como dependência de desenvolvimento, podemos criar scripts automatizados para serem rodados no terminal.
+No nosso repositório vamos padronizar o nome dos scripts principais como cap<númeroDocapítulo>, e usaremos o nodemon para rodar esses scripts, de forma que não precisaremos mais encerrar e re-executar o script manualmente a cada alteração o arquivo `package.json` terá algo como:
+
+```json
+"scripts":{
+"cap2": "nodemon /Cap_2/index.js"
+}
+```
+Para rodar esse script basta rodar o comando :
+
+```bash
+
+$ npm run cap2
+
+``` 
+![npmRun](https://user-images.githubusercontent.com/67330930/177048027-e191ee5e-57b9-4c7a-86be-5954efaf2d6f.gif)
+
+> Esse comando é equivalente a executar `node Cap_2/index.js`, só que toda vez que houver uma alteração no projeto você deverá apertar CTRL+C e executar esse comando novamente.
+
+### Instalando e configurando o git
+Primeiramente baixe o git no seu computador através deste [link](https://git-scm.com/downloads) e instale-o na sua máquina:
+
+![gitTutorialINstalation](https://user-images.githubusercontent.com/67330930/177046006-05ad1227-a783-42ef-aed1-71a17cdb4908.gif)
 
 ## Links úteis
 
@@ -75,11 +109,6 @@ Aqui serão adicionados links considerados úteis para o prosseguimento do apren
 * [Vídeo-aulas de Node](https://www.youtube.com/watch?v=LLqq6FemMNQ&list=PLJ_KhUnlXUPtbtLwaxxUxHqvcNQndmI4B&index=1)
 
 * [GitFlow](https://www.atlassian.com/br/git/tutorials/comparing-workflows/gitflow-workflow)
-
-## Instalando e configurando o git
-Primeiramente baixe o git no seu computador através deste [link](https://git-scm.com/downloads) e instale-o na sua máquina:
-
-![gitTutorialINstalation](https://user-images.githubusercontent.com/67330930/177046006-05ad1227-a783-42ef-aed1-71a17cdb4908.gif)
 
 ## Dependências e Módulos
 
