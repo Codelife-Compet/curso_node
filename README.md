@@ -90,9 +90,48 @@ $ npm run cap2
 > Esse comando é equivalente a executar `node Cap_2/index.js`, só que toda vez que houver uma alteração no projeto você deverá apertar CTRL+C e executar esse comando novamente.
 
 ### Instalando e configurando o git
+
 Primeiramente baixe o git no seu computador através deste [link](https://git-scm.com/downloads) e instale-o na sua máquina:
 
 ![gitTutorialINstalation](https://user-images.githubusercontent.com/67330930/177046006-05ad1227-a783-42ef-aed1-71a17cdb4908.gif)
+
+#### Configurando usuário e email
+
+Uma vez instalado é hora de configurar! Para isso abra o terminal da sua máquina (se estiver usando windows, clique com o botão direito do mouse e selecione a opção bash here :
+
+![bashere](https://user-images.githubusercontent.com/67330930/177048523-2e5fc63a-a3db-4ff4-85ad-e4963faa43ac.gif)
+
+Em seguida configure o nome de usuário e o seu email padrão através dos comandos:
+
+```bash
+$ git config --global user.name "<nomeDoUsuário>"
+$ git config --global user.email <emailDoUsuário>
+```
+ ![gitconfig](https://user-images.githubusercontent.com/67330930/177048691-7482d39f-fe2a-4f39-9944-fcf6c7385498.gif)
+> Esses dados são utilizados pelo git para encriptar cada commit em um código único usando a criptografia SHA1
+
+#### Criando uma chave SSH
+O SSH é um protocolo de rede que permite que a conexão com determinados servidores por meio de uma comunicação criptografada, trazendo mais segurança para as transações de dados.
+No Github essa tecnologia é utilizada para gerenciar seus repositórios e suas contribuições de forma remota.
+
+Para gerar uma chave SSH utilize o seguinte comando:
+
+```bash
+
+$ ssh-keygen -t ed25519 -C "your_email@example.com"
+
+```
+> Isso gerará um flow no terminal que solicitará a pasta onde o arquivo de encriptação se encontra, uma senha e sua confirmação
+
+![ssh](https://user-images.githubusercontent.com/67330930/177049148-7c4fba6f-43ae-4c34-85cb-e7a2f723b22b.gif)
+
+Agora vá até a pasta solicitada, abra o arquivo criado com o bloco de notas e copie esse código:
+
+![sshCopy](https://user-images.githubusercontent.com/67330930/177049640-5c8ecfb8-2af9-43a7-bbe6-c095982aa5b3.gif)
+
+>No seu caso copie o código que possui pub no final.
+
+No github vá até [configurações SSH](https://github.com/settings/keys), selecione new SSH key, dê um nome para sua chave, e cole o conteúdo copiado, salve, e em seguida será solicitado uma autenticação, após feita, seu github está devidamente configurado e pronto para ser utilizado!
 
 ## Links úteis
 
