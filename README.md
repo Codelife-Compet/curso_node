@@ -30,11 +30,13 @@ Este é um repositório de aprendizado, então, caso você tenha chegado recente
 
 1. **Se habitue a utilizar o git** : 
     
-    Tem um mini tutorial logo abaixo de [como criar uma chave SSH e clonar o repositório na sua máquina local](#clonando-o-projeto), além de ensinar o processo de instalação do git e outras configurações importantes.
+    Tem um mini tutorial logo abaixo de [como instalar e configurar o git](#instalando-e-configurando-o-git)
     >O processo de aprendizado do uso do git será algo que dependerá de você, e da prática, procure aprender o básico e evolua aos poucos, confie em mim.
 
 2. **Utilize o github o máximo possível**:
-    Este é o lugar onde você pode tirar suas dúvidas, mostrar sua evolução e se preparar para o desafio de verdade, que é melhorar nosso querido codelife. Abuse das issues, abaixo estarão algumas dicas de [como utilizar bem as ferramentas do github]().
+    Este é o lugar onde você pode tirar suas dúvidas, mostrar sua evolução e se preparar para o desafio de verdade, que é melhorar nosso querido codelife. Abuse das issues para tirar dúvidas, falar sobre problemas no código e organizar suas tarefas. 
+
+    No link a seguir estarão algumas dicas pra quem está [iniciando no github](https://docs.github.com/pt/get-started/quickstart/hello-world).
 
 3. **Leia o livro**!
     Nosso repositório segue uma bibliografia incrível do [Ethan Brown](https://github.com/EthanRBrown) que ensina do zero a utilizar o express para desenvolver aplicações web reais tocando cada ponto importante para tal. O link está na seção de [links úteis](#links-úteis).
@@ -132,6 +134,55 @@ Agora vá até a pasta solicitada, abra o arquivo criado com o bloco de notas e 
 >No seu caso copie o código que possui pub no final.
 
 No github vá até [configurações SSH](https://github.com/settings/keys), selecione new SSH key, dê um nome para sua chave, e cole o conteúdo copiado, salve, e em seguida será solicitado uma autenticação, após feita, seu github está devidamente configurado e pronto para ser utilizado!
+
+## Como contribuir para o repositório
+
+Deixarei neste tópico algumas boas práticas para serem seguidas ao contribuir com nosso repositório.
+
+### Regra zero do repositório
+Não que existam outras regras numeradas, mas essa realmente merece esse nome.
+
+***NUNCA***, eu disse, ***NUNCA*** , faça alterações diretamente na branch main.
+O motivo é bem simples, o código da branch main, é o código principal do repositório. É a partir dele que quem vai desenvolver novos códigos vai se basear, e por isso, esse código deve ser estável (que significa que foi revisado e testado, além de funcionar de acordo com o que é esperado).
+
+Então a única maneira de fazer isso é proibindo o uso da branch main para edição direta, logo para fazer edições crie uma nova branch com um nome sugestivo para a o que você pretende fazer e ao terminar, crie um [pull request](#criando-um-pull-request) para iniciar o processo de revisão do código.
+
+### Criando pontos de progressão
+
+Para manter a organização, planejamento e distribuição de tarefas para os membros, precisamos primeiramente separar nossas issues/tarefas em capítulos usando os milestones do github para acompanhar a progressão dos capítulos do livro.
+
+Para criar um milestone siga o exemplo abaixo:
+
+![milestone](https://user-images.githubusercontent.com/67330930/177050971-da969cbe-548e-4906-ab87-754ad511bd7c.gif)
+
+### Criando issues/tarefas
+
+Em cada capítulo são determinadas algumas tarefas e ao criar uma issue no repositório deve-se sempre cumprir os seguintes pontos:
+
+1. Dar um título expressivo, que descreva sucintamente o que deve ser feito na issue
+2. Descrever as tasks a serem cumpridas, usando a marcação de task-list do markdown
+3. Marcar os responsáveis pela execução da tarefa
+4. Utilizar as labels/tags de acordo com a natureza da atividade
+5. Marcar o milestone/capítulo referente àquela issue/tarefa
+6. Após criar a issue, em development, crie uma branch focada na execução da tarefa (se for uma tarefa que envolva código) ou relacione com um pull request aberto 
+
+### Criando um pull request
+
+Se você é novo no github esse termo pode ser novidade pra você, e possivelmente você nunca o fez, mas é algo simples e fácil de se fazer.
+
+Ao adicionar código ao nosso repositório, provavelmente você já tem conhecimento sobre o [básico do git](https://www.git-scm.com/book/pt-pt/v2/Come%C3%A7ando-O-B%C3%A1sico-do-Git#:~:text=%20O%20B%C3%A1sico%20do%20Git%20%201%20Imagens%2C,antes%20de%20ser%20armazenado%20e%20%C3%A9...%20More%20), e também já sabe sobre a [regra zero do repositório](#regra-zero-do-repositorio), então você já criou uma branch para o desenvolvimento do seu código e subiu esse código para o repositório através de um push.
+
+Agora é o momento de fazer seu pull request, e aqui vamos listar as boas práticas para você mostrar pra gente o que você fez:
+
+1. Insira um bom título para a issue.
+2. Descreva o que foi feito.
+    Não é necessária uma descrição minunciosa pois o código faz isso por você, mas boas descrições facilitam o entendimento do código durante as revisões
+3. Tenha uma issue linkada.
+    * Caso você já tenha uma issue criada, basta clicar em development e selecionar a issue correspondente
+    * Caso não tenha nenhuma issue criada, não faça nada, posteriormente pode ser criada uma issue linkando esse pull request.
+4. Certifique-se de marcar os responsáveis pelo desenvolvimento do código
+5. Marque alguém para revisar o código: provavelmente haverá alguém responsável por isso por padrão, caso contrário, marque alguém que seja capaz de revisar seu código.
+6. Use bem as labels, e certifique-se de que elas são compatíveis com seu pull request
 
 ## Links úteis
 
