@@ -221,9 +221,7 @@ fs ( módulo padrão do node ) | `const fs= require('fs')` | `fs.readFile()`
 Dependência | comando de uso/instalação | Exemplo de utilização
 :---:|:---:|:---:
 Express| `npm install express` | `const express = require('express')`
-
 express-handlebars | `npm install express-handlebars` | `const expressHandlebars = require('express-handlebars')`
-
 Nodemon | `npm install --save-dev nodemon` | `nodemon código.js`
 
 ---
