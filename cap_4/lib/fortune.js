@@ -8,6 +8,6 @@ const fortunes = [
   "Explique uma parte do código"
 ];
 exports.getFortune=()=>{
-    const index_fortune = fortunes[Math.floor(Math.random() * fortunes.length)];
+    const index_fortune = Math.floor(Math.random() * fortunes.length);
     return fortunes[index_fortune];
   }

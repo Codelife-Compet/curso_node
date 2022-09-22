@@ -9,6 +9,7 @@ const codelifers = [
   "Luiz"
 ];
 exports.getCodelifer=()=>{
-  const index_codelifer = codelifers[Math.floor(Math.random() * codelifers.length)];
+
+  const index_codelifer =Math.floor(Math.random() * codelifers.length);
   return codelifers[index_codelifer];
 }

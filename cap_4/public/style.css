@@ -2,13 +2,20 @@ body{
     margin: 0;
     padding: 0;
 }
-div.fortuneCookie{
-    position: absolute;
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+}
+.fortuneCookie{
+    position: static;
     margin: auto;
     left: 40px;
     right: 40px;
 }
-div.fortuneCookie>blockquote{
+.fortuneCookie>blockquote{
     position: relative;
     margin: auto;
     background-color: #2b2b2b;
