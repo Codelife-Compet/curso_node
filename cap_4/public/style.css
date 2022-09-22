@@ -2,7 +2,15 @@ body{
     margin: 0;
     padding: 0;
 }
+:root{
+    --text-black:rgb(34, 34, 34);
+    --top-color: rgb(0, 187, 255);
+    --bottom-color:white;
+    --my-gradient:linear-gradient(var(--top-color),var(--bottom-color));
+}
 .container{
+    height: 100vh;
+    background:var(--my-gradient);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,13 +24,14 @@ body{
     right: 40px;
 }
 .fortuneCookie>blockquote{
+    --my-gradient:linear-gradient(var(--top-color),var(--text-black));
     position: relative;
     margin: auto;
-    background-color: #2b2b2b;
+    background: var(--my-gradient);
     color: rgba(212, 212, 212, 0.76);
     margin: 10px;
     padding: 20px;
-    border: solid 2px green;
+    border-radius: 16px;
     text-align: center;
     width: 200px;
 }
