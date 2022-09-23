@@ -10,6 +10,6 @@ const codelifers = [
 ];
 exports.getCodelifer=()=>{
 
-  const index_codelifer =Math.floor(Math.random() * codelifers.length);
-  return codelifers[index_codelifer];
+  const indexCodelifer =Math.floor(Math.random() * codelifers.length);
+  return codelifers[indexCodelifer];
 }

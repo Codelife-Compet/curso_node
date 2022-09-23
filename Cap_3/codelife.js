@@ -1,3 +1,4 @@
+/* eslint-disable n/handle-callback-err */
 const express = require('express');
 const expressHandlebars = require('express-handlebars'); 
 const app = express();
@@ -24,17 +25,17 @@ const codelifers = [
     "Lucas",
     "Francisco"
 ];
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname.join('/public')));
 
 app.get('/', (req, res) => {
     res.render('home');
 });
-app.set('views', __dirname+'/views');
+app.set('views', __dirname.join('/views'));
 
 app.get('/fortunes', (req, res) => {
     const codelifer = codelifers[Math.floor(Math.random() * codelifers.length)];
     const fortune = fortunes[Math.floor(Math.random() * fortunes.length)];
-    res.render('cookieSort',{codelifer:codelifer,fortune:fortune});
+    res.render('cookieSort',{codelifer,fortune});
 });
 app.get('/about', (req, res) => {
     res.render('about');

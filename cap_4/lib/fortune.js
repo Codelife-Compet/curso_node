@@ -8,7 +8,7 @@ const fortunes = [
   "Crie um módulo para a página not Found e exporte para o arquivo principal"
 ];
 // Esse array pode e deve ser alterado em cada capítulo para refletir o conteúdo aprendido
-exports.getFortune=()=>{
-    const index_fortune = Math.floor(Math.random() * fortunes.length);
-    return fortunes[index_fortune];
+exports.getFortune = ()=>{
+    const indexFortune = Math.floor(Math.random() * fortunes.length);
+    return fortunes[indexFortune];
   }
