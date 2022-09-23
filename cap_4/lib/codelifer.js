@@ -1,4 +1,3 @@
-
 const codelifers = [
   "Henrique",
   "Richard",
@@ -6,10 +5,9 @@ const codelifers = [
   "Lucas",
   "Francisco",
   "Aline",
-  "Luiz"
+  "Luiz",
 ];
-exports.getCodelifer=()=>{
-
-  const indexCodelifer =Math.floor(Math.random() * codelifers.length);
+exports.getCodelifer = () => {
+  const indexCodelifer = Math.floor(Math.random() * codelifers.length);
   return codelifers[indexCodelifer];
-}
+};
