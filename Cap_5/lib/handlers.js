@@ -10,6 +10,7 @@ exports.cookieSort = (req, res) => {
 };
 exports.notFound = (err, req, res, next) => {
   res.status(404);
+
   res.render("404");
 };
 exports.serverError = (err, req, res, next) => {
