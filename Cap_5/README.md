@@ -107,6 +107,7 @@ Para solucionar erros identificados pelo ESLint
 npx eslint --fix \<diretório de interesse>
 ```
 > Caso tenha instalado o eslint globalmente, o próprio eslint apontará problemas diretamente na aba problemas do vscode para serem resolvidos.
+
 ## O plano de Q.A
 
 A área de qualidade de software é muito vasta para ser tratada com toda sua profundidade num projeto cujo foco é o aprendizado de node, mas as vantagens conquistadas até mesmo num projeto pequeno como o atual, ao aplicar os fundamentos de Q.A, fazem com que seja viável a abordagem do tema mesmo que de forma superficial.
