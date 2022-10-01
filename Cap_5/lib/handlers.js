@@ -1,19 +1,22 @@
-/* eslint-disable n/handle-callback-err */
-exports.home = (req, res) => {
+const fortune = require("./fortune");
+const codelifer = require("./codelifer");
+exports.home = (_req, res) => {
   res.render("home");
 };
-exports.about = (req, res) => {
+exports.about = (_req, res) => {
   res.render("about");
 };
-exports.cookieSort = (req, res) => {
-  res.render("cookieSort");
+exports.cookieSort = (_req, res) => {
+  res.render("cookieSort",{
+    fortune: fortune.getFortune(),
+    codelifer:codelifer.getCodelifer()});
 };
-exports.notFound = (err, req, res, next) => {
+exports.notFound = (_req, res, ) => {
   res.status(404);
 
   res.render("404");
 };
-exports.serverError = (err, req, res, next) => {
+exports.serverError = (_err, _req, res, _next) => {
   res.status(500);
   res.render("500");
 };
