@@ -190,7 +190,7 @@ Os testes unitários abordam as menores unidades de funcionalidade da aplicaçã
 
 No nosso repositório utilizaremos o [Jest](https://jestjs.io/docs/getting-started).
 
-### Testando e configurando o Jest
+### Configurando o Jest
 
 Primeiramente efetue a instalação do Jest no seu projeto:
 
@@ -200,9 +200,36 @@ npm i -D jest
 
 ```
 Para executar os testes você deve criar um comando para executar os testes com npm, no arquivo `package.json`:
+
 ```json
 "scripts":{
   "test":"jest"
   // Outros scripts abaixo...
 }
+```
+
+### Entendendo sobre Mocking
+
+Definição : ***O mocking é um processo utilizado para criar objetos que simulam o comportamento de objetos reais complexos, difíceis ou impossíveis de serem incorporados no teste unitário.***
+
+Devemos tentar remover o máximo de dependências para criar  código testável.
+Na prática, fazer com que nossas funções tenham apenas uma responsabilidade, é uma forma efetiva de se criar código testável.
+
+Sempre haverá uma dependência, e sempre que houver, temos algo que deve ser "mockado" para que o teste seja eficaz.
+
+>No capítulo atual foram feitas alterações para que possamos tornar cada uma das rotas testáveis, extraindo as rotas para uma pasta chamada lib (library)
+
+Para criar um teste,utiliza-se a ideia de que dado um determinado teste com suas dependências, espera-se que a utilização do módulo responda de uma forma determinada.
+
+O primeiro teste que consta no livro espera que a resposta para qual será a página renderizada seja a página home.
+```js
+
+const handlers = require("../handlers");
+test("home page renders",()=>{
+  const req = {};
+  const res = { render:jest.fn()};
+  handlers.home(req,res);
+  expect(res.render.mock.calls[0][0]).toBe("home");
+})
+
 ```

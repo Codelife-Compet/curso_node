@@ -237,7 +237,8 @@ Dependência | comando de uso/instalação | Exemplo de utilização
 :---:|:---:|:---:
 eslint| `npm i -D eslint ` | `npm run lint`
 prettier | `npm install -D prettier` | `npx prettier Cap_5 -c`
-
+jest | `npm install -D jest ` |
+puppeteer | `npm install -D puppeteer ` |
 ---
 ## Arquitetura dos exemplos
 
