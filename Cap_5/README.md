@@ -233,3 +233,17 @@ test("home page renders",()=>{
 })
 
 ```
+### Cobertura de testes
+
+A cobertura de testes é uma forma de mensurar quantitativamente até onde o código deve ser testado, em suma, é uma ferramenta útil do ponto de vista prático, nos dando uma ideia de por onde iniciar os testes na aplicação. Essa funcionalidade do jest é útil quando se trata de um código já criado, para o qual se deseja criar testes unitários.
+Para gerar um *coverage* você deve executar o seguinte comando no seu terminal:
+```shell
+npm test -- --coverage
+``` 
+> Atualmente no mercado, comumente se utilizam metodologias de projeto onde os testes vem primeiro, o famoso TDD, que é o desenvolvimento dirigido por testes
+
+
+### Utilizando os testes de integração
+
+Os testes de integração já são testes mais voltados para áreas mais subjetivas. É a partir daqui que se deve pensar em quais serão as funcionalidades da aplicação, e como o usuário gostaria que sua aplicação respondesse. Essa etapa é bem difícil de cobrir no ponto em que estamos, então a sugestão é que dê atenção a esse tópico, entenda como podemos gerar testes de integração, e como entendê-los na prática. Pois possivelmente caso trabalhe com desenvolvimento, você vai se deparar com a utilização de testes na sua carreira.
+
