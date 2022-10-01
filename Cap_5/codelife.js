@@ -19,4 +19,8 @@ app.get("/cookieSort", handlers.cookieSort);
 app.use(handlers.notFound);
 app.use(handlers.serverError);
 // Iniciando o servidor
-app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+require.main === module
+  ? app.listen(port, () =>
+      console.log(`Example app listening on port ${port}!`)
+    )
+  : (module.exports = app);
