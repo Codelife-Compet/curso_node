@@ -5,13 +5,13 @@ module.exports = {
     es2021: true,
     jest: true,
   },
-  extends: ['standard', 'plugin:prettier/recommended'],
-  overrides: [
-  ],
+  plugins: ["jest"],
+  extends: ["standard", "plugin:prettier/recommended"],
+  overrides: [],
   parserOptions: {
-    ecmaVersion: 'latest'
+    ecmaVersion: "latest",
   },
   rules: {
-    'no-console': 'off'
-  }
-}
+    "no-console": "off",
+  },
+};

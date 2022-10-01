@@ -225,7 +225,20 @@ express-handlebars | `npm install express-handlebars` | `const expressHandlebars
 Nodemon | `npm install --save-dev nodemon` | `nodemon código.js`
 
 ---
+### Capítulo 4
 
+Dependência | comando de uso/instalação | Exemplo de utilização
+:---:|:---:|:---:
+n/a| n/a| n/a
+---
+### Capítulo 5
+
+Dependência | comando de uso/instalação | Exemplo de utilização
+:---:|:---:|:---:
+eslint| `npm i -D eslint ` | `npm run lint`
+prettier | `npm install -D prettier` | `npx prettier Cap_5 -c`
+
+---
 ## Arquitetura dos exemplos
 
 Cada capítulo possuirá notas importantes para serem lidas posteriormente, bem como a estrutura dos exemplos contidos no livro.
