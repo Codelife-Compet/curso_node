@@ -3,15 +3,16 @@ const codelifer = require("./codelifer");
 exports.home = (_req, res) => {
   res.render("home");
 };
-exports.about = (_req, res) => {
+exports.about = (req, res) => {
   res.render("about");
 };
 exports.cookieSort = (_req, res) => {
-  res.render("cookieSort",{
+  res.render("cookieSort", {
     fortune: fortune.getFortune(),
-    codelifer:codelifer.getCodelifer()});
+    codelifer: codelifer.getCodelifer(),
+  });
 };
-exports.notFound = (_req, res, ) => {
+exports.notFound = (_req, res) => {
   res.status(404);
   res.render("404");
 };

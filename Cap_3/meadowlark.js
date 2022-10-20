@@ -2,7 +2,7 @@ const express = require("express");
 const expressHandlebars = require("express-handlebars");
 const app = express();
 const port = process.env.PORT || 3000;
-
+const path = require("path");
 // configure Handlebars view engine
 const engineHandlebars = expressHandlebars.engine({
   defaultLayout: "main",
@@ -10,8 +10,8 @@ const engineHandlebars = expressHandlebars.engine({
 
 app.engine("handlebars", engineHandlebars);
 app.set("view engine", "handlebars");
-app.use(express.static(__dirname.join("/public")));
-app.set("views", __dirname.join("/views"));
+app.use(express.static(path.join(__dirname, "/public")));
+app.set("views", path.join(__dirname, "/views"));
 
 // Pages renders
 

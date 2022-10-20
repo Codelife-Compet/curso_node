@@ -36,7 +36,7 @@ test("notFound page renders", () => {
 });
 test("serverError page renders", () => {
   const req = {};
-  const err = new Error('Algum erro');
+  const err = new Error("Algum erro");
   const res = { render: jest.fn(), status: jest.fn() };
   const next = jest.fn();
   handlers.serverError(err, req, res, next);
