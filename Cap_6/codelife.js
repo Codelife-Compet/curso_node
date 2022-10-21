@@ -3,9 +3,11 @@ const path = require("path");
 const expressHandlebars = require("express-handlebars");
 const app = express();
 const handlers = require("./lib/handlers");
+const examples = require("./lib/examples");
 const port = process.env.port || 3333;
 const cookieParser = require("cookie-parser");
 const expressSession = require("express-session");
+const bodyParser = require("body-parser");
 const engineHandlebars = expressHandlebars.engine({
   defaultLayout: "main",
 });
@@ -28,15 +30,23 @@ app.use(
   })
 );
 
+// Configuração do body-parser para o processamento do formulário
+app.use(bodyParser.urlencoded({ extended: true }));
 // Servindo as rotas configuradas anteriormente através dos handlers definidos no capítulo atual
 
 app.get("/", handlers.home);
 app.get("/about", handlers.about);
 app.get("/cookieSort", handlers.cookieSort);
-app.get("/echoHandlers", handlers.echoHeaders);
-app.get("/greeting", handlers.viewWithContent);
-app.get("/noLayout", handlers.noLayout);
-app.get("/customLayout", handlers.customLayout);
+
+// exemplos do capítulo 6
+
+app.get("/echoHandlers", examples.echoHeaders);
+app.get("/greeting", examples.viewWithContent);
+app.get("/noLayout", examples.noLayout);
+app.get("/customLayout", examples.customLayout);
+app.get("/basicForm", examples.basicForm);
+app.post("/basicForm/process", examples.basicFormProcess);
+app.get("/basicForm/thank-you", examples.thankYou);
 app.use(handlers.notFound);
 app.use(handlers.serverError);
 // Iniciando o servidor

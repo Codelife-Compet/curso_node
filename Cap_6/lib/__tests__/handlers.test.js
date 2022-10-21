@@ -1,4 +1,4 @@
-const handlers = require("../handlers");
+const examples = require("../examples");
 test("View com contexto", () => {
   const req = {
     query: { style: "color:red" },
@@ -6,7 +6,7 @@ test("View com contexto", () => {
     session: { username: "usuário" },
   };
   const res = { render: jest.fn() };
-  handlers.viewWithContent(req, res);
+  examples.viewWithContent(req, res);
   expect(res.render.mock.calls.length).toBe(1);
   expect(res.render.mock.calls[0][0]).toBe("greeting");
   expect(res.render.mock.calls[0][1]).toEqual(
@@ -21,7 +21,7 @@ test("View com contexto", () => {
 test("View sem layout", () => {
   const req = {};
   const res = { render: jest.fn() };
-  handlers.noLayout(req, res);
+  examples.noLayout(req, res);
   expect(res.render.mock.calls.length).toBe(1);
   expect(res.render.mock.calls[0][0]).toBe("no-layout");
   expect(res.render.mock.calls[0][1]).toEqual(
@@ -32,7 +32,7 @@ test("View com layout personalizado", () => {
   const req = {};
   const res = { render: jest.fn() };
 
-  handlers.customLayout(req, res);
+  examples.customLayout(req, res);
 
   expect(res.render.mock.calls.length).toBe(1);
   expect(res.render.mock.calls[0][0]).toBe("custom-layout");
@@ -44,7 +44,7 @@ test("Renderizando view com saída apenas em texto", () => {
   const req = {};
   const res = { type: jest.fn(), send: jest.fn() };
 
-  handlers.plainText(req, res);
+  examples.plainText(req, res);
 
   expect(res.type.mock.calls.length).toBe(1);
   expect(res.type.mock.calls[0][0]).toBe("text/plain");
@@ -55,7 +55,7 @@ test("Construção de um formulário básico", () => {
   const req = { body: { name: "nome de teste", email: "testMail@gmail.com" } };
   const res = { redirect: jest.fn() };
 
-  handlers.basicForm(req, res);
+  examples.basicFormProcess(req, res);
 
   expect(res.redirect.mock.calls.length).toBe(1);
   expect(res.redirect.mock.calls[0][0]).toBe(303);
