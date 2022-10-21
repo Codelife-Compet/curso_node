@@ -45,3 +45,13 @@ exports.viewWithContent = (req, res) => {
     username,
   });
 };
+exports.noLayout = (_req, res) => {
+  res.render("no-layout", { layout: null });
+};
+exports.customLayout = (_req, res) => {
+  res.render("custom-layout", { layout: "custom" });
+};
+exports.plainText = (_req, res) => {
+  res.type("text/plain");
+  res.send("Apenas um texto");
+};

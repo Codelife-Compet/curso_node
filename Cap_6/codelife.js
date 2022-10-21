@@ -35,6 +35,8 @@ app.get("/about", handlers.about);
 app.get("/cookieSort", handlers.cookieSort);
 app.get("/echoHandlers", handlers.echoHeaders);
 app.get("/greeting", handlers.viewWithContent);
+app.get("/noLayout", handlers.noLayout);
+app.get("/customLayout", handlers.customLayout);
 app.use(handlers.notFound);
 app.use(handlers.serverError);
 // Iniciando o servidor

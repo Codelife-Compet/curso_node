@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "description": "Curso node",
     "scripts": {
-        "test": "jest",
+        "test": "jest --watch -o",
         "cap2": "nodemon Cap_2/index.js",
         "cap3": "nodemon Cap_3/codelife.js",
         "cap4": "nodemon Cap_4/codelife.js",
