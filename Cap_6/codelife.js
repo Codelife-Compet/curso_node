@@ -25,13 +25,14 @@ app.use(cookieParser("abc"));
 app.use(
   expressSession({
     resave: false,
-    saveUnintialized: false,
+    saveUninitialized: false,
     secret: "abc",
   })
 );
 
 // Configuração do body-parser para o processamento do formulário
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 // Servindo as rotas configuradas anteriormente através dos handlers definidos no capítulo atual
 
 app.get("/", handlers.home);
@@ -46,7 +47,10 @@ app.get("/noLayout", examples.noLayout);
 app.get("/customLayout", examples.customLayout);
 app.get("/basicForm", examples.basicForm);
 app.post("/basicForm/process", examples.basicFormProcess);
-app.get("/basicForm/thank-you", examples.thankYou);
+app.get("/robustForm", examples.robustForm);
+app.post("/robustForm/process", examples.robustFormProcess);
+app.get("/contact-error", examples.contactError);
+app.get("/thank-you", examples.thankYou);
 app.use(handlers.notFound);
 app.use(handlers.serverError);
 // Iniciando o servidor
