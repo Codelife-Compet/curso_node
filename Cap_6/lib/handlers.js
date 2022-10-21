@@ -35,7 +35,7 @@ exports.viewWithContent = (req, res) => {
     req.session.username = "Pablo Emilio Escobar";
   }
   const message = "Olá estimado programador!";
-  const style = req.query.style || "banana";
+  const style = req.query.style || "color:inherit";
   const userId = req.cookies.userId || "userId não encontrado";
   const username = req.session.username || "usuário de teste";
   res.render("greeting", {
