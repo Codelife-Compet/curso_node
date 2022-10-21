@@ -3,7 +3,7 @@ const codelifer = require("./codelifer");
 exports.home = (_req, res) => {
   res.render("home");
 };
-exports.about = (req, res) => {
+exports.about = (_req, res) => {
   res.render("about");
 };
 exports.cookieSort = (_req, res) => {
