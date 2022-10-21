@@ -16,6 +16,7 @@ app.use(express.static(path.join(__dirname, "../public")));
 app.get("/", handlers.home);
 app.get("/about", handlers.about);
 app.get("/cookieSort", handlers.cookieSort);
+app.get("/echoHandlers", handlers.echoHeaders);
 app.use(handlers.notFound);
 app.use(handlers.serverError);
 // Iniciando o servidor
