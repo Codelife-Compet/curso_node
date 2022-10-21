@@ -54,7 +54,9 @@ app.get("/contact-error", examples.contactError);
 app.get("/thank-you", examples.thankYou);
 
 // Simulando uma api
-app.get("/api/tours", api.getTours);
+app.get("/api/tours", api.toursController);
+app.put("/api/tours", api.toursController);
+app.delete("/api/tours", api.toursController);
 app.use(handlers.notFound);
 app.use(handlers.serverError);
 // Iniciando o servidor
