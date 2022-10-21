@@ -127,3 +127,19 @@ align-items: center;
   cursor: pointer;
   opacity: 70%;
 }
+.l-card{
+  display: flex;
+  align-items: flex-start;
+  align-content: center;
+  flex-flow: column;
+  margin-top: 2em;
+  padding: 0.2em;
+  border: 1px solid black;
+  border-radius: 2em;
+}
+.c-user{
+  padding-left: 0.4em;
+}
+.c-message{
+  padding-left: 0.4em;
+}
