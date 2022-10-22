@@ -8,13 +8,14 @@ class TourControllerSpy {
   }
 
   getData = () => this.data;
-  setData = (newTour) => {
-    if (!(newTour instanceof Tour)) {
+  postData = ({ name, id, price }) => {
+    if (!name || !id || !price) {
       throw new Error(
         "Não foi possível cadastrar o novo tour, entrada inválida"
       );
     }
-    if (tourController.getData().includes(newTour)) {
+    const newTour = new Tour({ name, id, price });
+    if (!this.data?.find((tour) => tour.id === newTour.id)) {
       throw new Error("Tour já existe");
     }
   };
@@ -25,7 +26,7 @@ describe("postApi", () => {
     const tourControllerSpy = makeTour();
     const newData = {};
     const mock = () => {
-      tourControllerSpy.setData(newData);
+      tourControllerSpy.postData(newData);
     };
     expect(mock).toThrow(
       new Error("Não foi possível cadastrar o novo tour, entrada inválida")
@@ -35,8 +36,21 @@ describe("postApi", () => {
     const tourControllerSpy = makeTour();
     const newData = tourController.getData()[0];
     const mock = () => {
-      tourControllerSpy.setData(newData);
+      tourControllerSpy.postData(newData);
     };
     expect(mock).toThrow(new Error("Tour já existe"));
+  });
+  it("O Método deve adicionar o novo dado ao banco de dados caso não exista um igual", () => {
+    const newData = new Tour({
+      id: 1,
+      name: "Boston Medical Group",
+      price: 199.99,
+    });
+    const tourControllerSpy = makeTour();
+    const postData = jest.fn(() => {
+      tourControllerSpy.postData(newData);
+    });
+    postData();
+    expect(postData.mock.calls.length).toBe(1);
   });
 });
