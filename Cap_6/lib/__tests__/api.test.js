@@ -1,7 +1,7 @@
 const { tourController } = require("../../api/tours");
 const { Tour } = require("../../api/model/tour");
 const data = tourController.getData();
-const { getTours } = require("../api");
+const { getTours } = require("../tourController");
 describe("toursApi", () => {
   it("A coleção de Tours deve possuir dados", () => {
     expect(data.length).toBeGreaterThan(0);

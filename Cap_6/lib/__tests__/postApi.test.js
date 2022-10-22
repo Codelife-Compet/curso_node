@@ -2,9 +2,9 @@ const { Tour } = require("../../api/model/tour");
 const { tourController } = require("../../api/tours");
 const data = tourController.getData();
 class TourControllerSpy {
-  data = new Array(Tour);
-  constructor({ data }) {
-    this.data = data;
+  data;
+  constructor(data) {
+    this.data = Array.from(data);
   }
 
   getData = () => this.data;
@@ -15,9 +15,11 @@ class TourControllerSpy {
       );
     }
     const newTour = new Tour({ name, id, price });
-    if (!this.data?.find((tour) => tour.id === newTour.id)) {
+    const isExistingtour = this.data.find((tour) => tour.id === newTour.id);
+    if (isExistingtour) {
       throw new Error("Tour já existe");
     }
+    return { length: this.data.push(newTour), novoTourId: newTour.id };
   };
 }
 const makeTour = () => new TourControllerSpy(data);
@@ -34,9 +36,9 @@ describe("postApi", () => {
   });
   it("O método deve lançar uma exceção caso o dado já exista no banco de dados", () => {
     const tourControllerSpy = makeTour();
-    const newData = tourController.getData()[0];
+    const newData = new Tour({ id: 121, name: "Hood River", price: 122.9 });
     const mock = () => {
-      tourControllerSpy.postData(newData);
+      tourControllerSpy.postData({ ...newData });
     };
     expect(mock).toThrow(new Error("Tour já existe"));
   });
@@ -47,10 +49,15 @@ describe("postApi", () => {
       price: 199.99,
     });
     const tourControllerSpy = makeTour();
-    const postData = jest.fn(() => {
-      tourControllerSpy.postData(newData);
-    });
+    const postData = jest.fn(() => tourControllerSpy.postData({ ...newData }));
+    const lengthOfData = tourControllerSpy.data.length;
     postData();
     expect(postData.mock.calls.length).toBe(1);
+    expect(postData).toHaveReturnedWith(
+      expect.objectContaining({
+        length: lengthOfData + 1,
+        novoTourId: newData.id,
+      })
+    );
   });
 });
