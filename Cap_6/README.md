@@ -135,9 +135,9 @@ Uma requisição não contém apenas headers, afinal, as vezes é necessário pa
 
 > Diferente da requisição POST, a requisição GET não possui body
 
-Geralmente, os dados passados para body são codificados no formato *aplication/x-www-form-urlencoded*, que se trata simplesmente de pares name/value codificados e separados por "&" assim como as queryStrings.
+Geralmente, os dados passados para body são codificados no formato *application/x-www-form-urlencoded*, que se trata simplesmente de pares name/value codificados e separados por "&" assim como as queryStrings.
 
-Esses dados devem ser decodificados pelo servidor para serem utilizados, ai que entram alguns *middlewares* do express, mas veremos isso mais adiante no curso.
+Esses dados devem ser decodificados pelo servidor para serem utilizados, ai que entram alguns *middleware* do express, mas veremos isso mais adiante no curso.
 
 ## O objeto de requisição
 
@@ -170,7 +170,7 @@ Não iremos nos aprofundar sobre o desenvolvimento da API no momento, até mesmo
 
 Agora sobre a API desenvolvida nesse capítulo, algumas coisas devem ser levadas em consideração.
 
-#### O processamento de formulários/Dados passados no corpo da requisição
+### O processamento de formulários/Dados passados no corpo da requisição
 
 Os dados recebidos no body do objeto de requisição estão codificados, e geralmente, o próprio servidor que informa a forma como esses dados estão codificados para que o navegador os envie. Mas ao receber esses dados, o servidor precisa decodificar essas informações utilizando um middleware chamado **bodyParser**, e as configurações desse middleware podem variar, mas para o padrão urlencoded:
 
@@ -204,3 +204,37 @@ const user = req.query.user;
 ```js
 const userID = req.params.id;
 ```
+
+### Testando as rotas da API
+
+Imagino que você não tenha usado nenhuma aplicação para teste de endpoints e etc, e a verdade é que existem inúmeras formas de se testar uma api, mas a aplicação que vou recomendar é muito intuitiva de utilizar, se chama [insomnia]("https://insomnia.rest/download").
+
+1. Uma vez instalado, abra o insomnia, e clique no botão create para criar um novo dashboard e selecione a opção request collection
+
+2. Dê um nome para a collection e clique no botão create
+
+3. Crie algumas variáveis de ambiente apertando CTRL+E
+    ```JSON
+    {
+    "baseUrl":"http://localhost:4000"
+    }
+    ```
+4. Feche a janela de variáveis de ambiente e crie uma rota clicando no botão + e selecione a opção Http request
+
+5. Feito isso você poderá usar as rotas de acordo com o que sua api utiliza, se for um método GET por exemplo:
+    
+    >Você pode utilizar _.baseUrl/api/tours e checar a utilização da rota criada no servidor
+
+6. Caso seja uma requisição POST, você deve modificar o método para POST e adicionar no Body o tipo de dado a ser enviado no body da requisição, por exemplo JSON
+
+    No caso da nossa Api:
+    ```json
+    {
+      "tour":{
+        "id": 133,
+        "name":"Testando API",
+        "price" : 199.99
+      }
+    }
+    ```
+>Caso você já tenha alguma familiaridade com outra ferramenta, você pode utilizá-la ao invés da que vou sugerir aqui
