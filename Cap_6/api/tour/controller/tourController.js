@@ -1,4 +1,4 @@
-const { Tour } = require("./model/tour");
+const { Tour } = require("../model/tour");
 
 const data = [
   new Tour({ id: 121, name: "Hood River", price: 122.9 }),
@@ -18,11 +18,11 @@ class TourController {
       );
     }
     const newTour = new Tour({ name, id, price });
-    const isExistingtour = this.data.find((tour) => tour.id === newTour.id);
-    if (isExistingtour) {
+    const isExistingTour = this.data.find((tour) => tour.id === newTour.id);
+    if (isExistingTour) {
       throw new Error("Tour já existe");
     }
-    return this.data.push(newTour);
+    return newTour;
   };
 }
 const tourController = new TourController(data);

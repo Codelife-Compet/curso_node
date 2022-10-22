@@ -1,4 +1,4 @@
-const { tourController } = require("../api/tours");
+const { tourController } = require("../controller/tourController");
 exports.getTours = (req, res) => {
   res.json(tourController.getData());
 };

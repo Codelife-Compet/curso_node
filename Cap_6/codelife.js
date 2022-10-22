@@ -4,7 +4,6 @@ const expressHandlebars = require("express-handlebars");
 const app = express();
 const handlers = require("./lib/handlers");
 const examples = require("./lib/examples");
-const api = require("./lib/api");
 const port = process.env.port || 3333;
 const cookieParser = require("cookie-parser");
 const expressSession = require("express-session");
@@ -53,10 +52,6 @@ app.post("/robustForm/process", examples.robustFormProcess);
 app.get("/contact-error", examples.contactError);
 app.get("/thank-you", examples.thankYou);
 
-// Simulando uma api
-app.get("/api/tours", api.toursController);
-app.put("/api/tours", api.toursController);
-app.delete("/api/tours", api.toursController);
 app.use(handlers.notFound);
 app.use(handlers.serverError);
 // Iniciando o servidor

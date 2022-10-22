@@ -143,3 +143,64 @@ Esses dados devem ser decodificados pelo servidor para serem utilizados, ai que 
 
 Não falarei aqui dos métodos existentes do objeto de requisição do node, entretanto, caso esteja curioso, o livro possui dados referentes a alguns métodos desse objeto que serão utilizados aqui nesse repositório.
 > A documentação do express exemplifica todos esses métodos caso esteja curioso basta acessar a [documentação do express](http://expressjs.com/)
+
+## O objeto de resposta
+
+## Sobre os exemplos desse capítulo
+
+Decidi Separar os exemplos do capítulo 6 em duas partes, sendo elas `examples.js` e `tourController.js`.
+
+Naturalmente, você deve relacionar o arquivo examples a um arquivo de exemplos, mas e o tourController, o que seria?
+
+Caso esteja acompanhando o livro, deve ter reparado que no final do capítulo ele fornece uma série de exemplos, entre eles uma api onde o livro implementa os métodos GET, PUT e DELETE em um endpoint relacionado a um conjunto de **tours**.
+
+>O arquivo tourController é onde são implementados os métodos GET,POST,PUT e DELETE.
+
+### Os testes
+
+Com exceção de alguns exercícios do capítulo 6, tentei ao máximo implementar os métodos do livro começando pela escrita dos testes, o que eu recomendo fortemente, pois são eles que vão averiguar se o desenvolvimento está de acordo o esperado.
+
+> Alterei também o script de teste para que ele rode apenas testes que ainda não foram commitados
+
+Caso queira aprender a desenvolver dirigido a testes, sugiro o acompanhamento do tema em alguns vídeos no YouTube que disponibilizarei no discord.
+
+### A API
+
+Não iremos nos aprofundar sobre o desenvolvimento da API no momento, até mesmo porque, existe um tópico no livro que trata exclusivamente sobre isso. Além disso, faremos uma migração do desenvolvimento da api, para desenvolvimento com Typescript e orientação a Objetos. Pra isso vamos ter que fazer algumas modificações na estrutura do projeto e configurações.
+
+Agora sobre a API desenvolvida nesse capítulo, algumas coisas devem ser levadas em consideração.
+
+#### O processamento de formulários/Dados passados no corpo da requisição
+
+Os dados recebidos no body do objeto de requisição estão codificados, e geralmente, o próprio servidor que informa a forma como esses dados estão codificados para que o navegador os envie. Mas ao receber esses dados, o servidor precisa decodificar essas informações utilizando um middleware chamado **bodyParser**, e as configurações desse middleware podem variar, mas para o padrão urlencoded:
+
+```js
+const bodyParser = require("body-parser");
+app.use(bodyParser.urlencoded({extended: false}))
+```
+
+De forma semelhante, para o formato JSON : 
+
+```js
+const bodyParser = require("body-parser");
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+```
+Com isso feito, podemos acessar os dados passados por formulários de forma simples no body do objeto de requisição:
+
+* Caso o formulário utilizar o método POST 
+
+```js
+const user = req.body.user;
+```
+
+* Caso o formulário utilizar o método GET
+
+```js
+const user = req.query.user;
+```
+* Caso forem utilizados parâmetros de rota
+
+```js
+const userID = req.params.id;
+```
