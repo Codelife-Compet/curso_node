@@ -1,6 +1,5 @@
-const { Tour } = require("../../api/model/tour");
-const { tourController } = require("../../api/tours");
-const { postTours } = require("../tourController");
+const { Tour } = require("../tours/model/tour");
+const { tourController } = require("../tours/controller/tourController");
 const data = tourController.getData();
 class TourControllerSpy {
   data;
@@ -16,11 +15,12 @@ class TourControllerSpy {
       );
     }
     const newTour = new Tour({ name, id, price });
-    const isExistingtour = this.data.find((tour) => tour.id === newTour.id);
-    if (isExistingtour) {
+    const existentTour = this.data.find((tour) => tour.id === newTour.id);
+    if (existentTour) {
       throw new Error("Tour já existe");
     }
-    return { length: this.data.push(newTour), novoTourId: newTour.id };
+    const length = this.data.push(newTour);
+    return { length, novoTourId: newTour.id };
   };
 }
 const makeTour = () => new TourControllerSpy(data);
@@ -101,7 +101,7 @@ describe("postApi", () => {
   it("O usuário receba uma mensagem de erro caso não seja possível cadastra o novo tour", () => {
     // Arrange
 
-    const req = { body: { tour: { faketour: "fail tour" } } };
+    const req = { body: { tour: { fakeTour: "fail tour" } } };
     const res = { status: jest.fn(), json: jest.fn() };
 
     // Act

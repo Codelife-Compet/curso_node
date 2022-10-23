@@ -1,13 +1,13 @@
 const { Tour } = require("../model/tour");
 
-const data = [
+const dataApi = [
   new Tour({ id: 121, name: "Hood River", price: 122.9 }),
   new Tour({ id: 122, name: "Gregon Coast", price: 129.9 }),
 ];
 class TourController {
   data;
   constructor(data) {
-    this.data = Array.from(data);
+    this.data = data;
   }
 
   getData = () => this.data;
@@ -18,12 +18,14 @@ class TourController {
       );
     }
     const newTour = new Tour({ name, id, price });
-    const isExistingTour = this.data.find((tour) => tour.id === newTour.id);
-    if (isExistingTour) {
+    const existentTour = this.data.find((tour) => tour.id === newTour.id);
+    if (existentTour) {
       throw new Error("Tour já existe");
     }
-    return newTour;
+    const length = this.data.push(newTour);
+    return { length, novoTourId: newTour.id };
   };
 }
-const tourController = new TourController(data);
+const tourController = new TourController(dataApi);
 exports.tourController = tourController;
+exports.TourController = TourController;
