@@ -1,5 +1,3 @@
-const { tourController } = require("../controller/tourController");
-
 class TourControllerUseCase {
   tourController;
   constructor(tourController) {
@@ -23,7 +21,7 @@ class TourControllerUseCase {
     } catch (error) {
       console.error(error);
       res.status(403);
-      res.json({ code: 403, error });
+      res.json({ code: 403, error: error.message });
     }
   };
 }
