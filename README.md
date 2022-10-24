@@ -225,7 +225,27 @@ express-handlebars | `npm install express-handlebars` | `const expressHandlebars
 Nodemon | `npm install --save-dev nodemon` | `nodemon código.js`
 
 ---
+### Capítulo 4
 
+Dependência | comando de uso/instalação | Exemplo de utilização
+:---:|:---:|:---:
+n/a| n/a| n/a
+---
+### Capítulo 5
+
+Dependência | comando de uso/instalação | Exemplo de utilização
+:---:|:---:|:---:
+eslint| `npm i -D eslint ` | `npm run lint`
+prettier | `npm install -D prettier` | `npx prettier Cap_5 -c`
+jest | `npm install -D jest ` | `npm run test`
+puppeteer | `npm install -D puppeteer ` |   `const browser = await puppeteer.launch()`
+
+---
+### Capítulo 6
+Dependência | comando de uso/instalação | Exemplo de utilização
+:---:|:---:|:---:
+cookieParser|`npm install cookie-parser`| `app.use(cookieParser(process.env.secret))`
+expressSession|`npm install express-session`|`app.use(expressSession({resave:false,saveUnintialized:false,secret:process.env.secret}))`
 ## Arquitetura dos exemplos
 
 Cada capítulo possuirá notas importantes para serem lidas posteriormente, bem como a estrutura dos exemplos contidos no livro.
