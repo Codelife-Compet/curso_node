@@ -14,9 +14,13 @@ exports.cookieSort = (_req, res) => {
 };
 exports.notFound = (_req, res) => {
   res.status(404);
-  res.render("404");
+  res.render("404", { message: "Achou nada" });
 };
 exports.serverError = (_err, _req, res, _next) => {
-  res.status(500);
-  res.render("500");
+  console.error("** SERVER ERROR: " + _err.message);
+  res.status(500).render("500", { message: "you shouldn't have clicked that" });
+};
+
+exports.thanks = (req, res) => {
+  res.render("thank-you");
 };

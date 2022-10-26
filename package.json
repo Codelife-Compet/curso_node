@@ -3,13 +3,13 @@
     "version": "1.0.0",
     "description": "Curso node",
     "scripts": {
-        "api":"nodemon Cap_6/api/server.js",
+        "api": "nodemon Cap_6/api/server.js",
         "test": "jest --watch -o",
         "cap2": "nodemon Cap_2/index.js",
         "cap3": "nodemon Cap_3/codelife.js",
         "cap4": "nodemon Cap_4/codelife.js",
         "cap5": "nodemon Cap_5/codelife.js",
-        "cap6": "nodemon Cap_6/examples/index.js",
+        "cap6": "nodemon Cap_6/codelife.js",
         "lint": "eslint Cap_5 --ext .js"
     },
     "repository": {
