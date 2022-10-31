@@ -18,7 +18,8 @@ exports.notFound = (_req, res) => {
 };
 exports.serverError = (_err, _req, res, _next) => {
   console.error("** SERVER ERROR: " + _err.message);
-  res.status(500).render("500", { message: "you shouldn't have clicked that" });
+  res.status(500);
+  res.render("500", { message: "you shouldn't have clicked that" });
 };
 
 exports.thanks = (req, res) => {
@@ -30,27 +31,38 @@ exports.text = (req, res) => {
   res.send("this is a teste");
 };
 
+exports.echoHeaders = (req, res) => {
+  const headers = Object.entries(req.headers);
+  res.json(headers);
+};
+
 exports.customLayout = (req, res) =>
   res.render("custom-layout", { layout: "custom" });
 
 exports.noLayout = (req, res) => res.render("no-layout", { layout: "null" });
 
 exports.greeting = (req, res) => {
-  if (req.cookie && !req.cookies.userId) {
+  if (req.cookies && !req.cookies.userId) {
     res.cookie("userId", "123");
   }
   if (req.session && !req.session.username) {
     req.session.username = "Francisco Abreu";
+    req.session.email = "email@gmail.com";
   }
   const message = "Olá estimado programador!";
   const style = req.query.style || "color:inherit";
   const userId = req.cookies.userId || "userId nao encontrado";
   const username = req.session.username || "Usuario nao encontrado";
-  res.render("greeting", { message, style, userId, username });
+  const email = req.session.email || "Email nao encontrado";
+  res.render("greeting", { message, style, userId, username, email });
 };
 
 exports.contactError = (req, res) => {
   res.render("contact-error");
+};
+
+exports.createTours = (req, res) => {
+  res.render("createTours");
 };
 
 // Basic Form

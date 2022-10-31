@@ -9,7 +9,7 @@ class TourControllerUseCase {
   };
 
   postTours = (req, res) => {
-    const tour = req.body.tour;
+    const tour = req.body;
     try {
       this.tourController.postData({
         id: tour.id,

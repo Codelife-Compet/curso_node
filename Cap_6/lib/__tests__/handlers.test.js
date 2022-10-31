@@ -43,4 +43,7 @@ test("serverError page renders", () => {
   expect(res.render.mock.calls.length).toBe(1);
   expect(res.status.mock.calls[0][0]).toBe(500);
   expect(res.render.mock.calls[0][0]).toBe("500");
+  expect(res.render.mock.calls[0][1]).toEqual(
+    expect.objectContaining({ message: "you shouldn't have clicked that" })
+  );
 });

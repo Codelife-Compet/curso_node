@@ -3,6 +3,7 @@ const { Tour } = require("../model/tour");
 const dataApi = [
   new Tour({ id: 121, name: "Hood River", price: 122.9 }),
   new Tour({ id: 122, name: "Gregon Coast", price: 129.9 }),
+  new Tour({ id: 123, name: "Teste", price: 129.9 }),
 ];
 class TourController {
   data;

@@ -37,6 +37,8 @@ app.get("/custom-layout", handlers.customLayout);
 app.get("/no-layout", handlers.noLayout);
 app.get("/greeting", handlers.greeting);
 app.get("/contact-error", handlers.contactError);
+app.get("/echoheaders", handlers.echoHeaders);
+app.get("/create-tours", handlers.createTours);
 app.use(handlers.notFound);
 app.use(handlers.serverError);
 
