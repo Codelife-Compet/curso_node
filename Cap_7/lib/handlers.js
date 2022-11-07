@@ -1,6 +1,6 @@
 const fortune = require("./fortune");
 const codelifer = require("./codelifer");
-const weather = require("./weather");
+const { getWeatherData } = require("./weather");
 
 exports.home = (_req, res) => {
   res.render("home");
@@ -117,4 +117,11 @@ exports.robustForm = (req, res) => {
 exports.sections = (req, res) => {
   const user = codelifer.getCodelifer();
   res.render("section", { user });
+};
+
+// Partials
+exports.weather = async (req, res, next) => {
+  if (!res.locals.partials) res.locals.partials = {};
+  res.locals.partials.weatherContext = await getWeatherData();
+  next();
 };

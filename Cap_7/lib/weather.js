@@ -1,4 +1,4 @@
-exports.weather = async () =>
+exports.getWeatherData = async () =>
   Promise.resolve([
     {
       location: {

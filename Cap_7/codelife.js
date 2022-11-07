@@ -3,18 +3,13 @@ const path = require("path");
 const expressHandlebars = require("express-handlebars");
 const cookieParser = require("cookie-parser");
 const expressSession = require("express-session");
+const helpers = require("./helpers/helpers");
 const app = express();
 const handlers = require("./lib/handlers");
 const port = process.env.port || 3333;
 const engineHandlebars = expressHandlebars.engine({
   defaultLayout: "main",
-  helpers: {
-    section: function (name, options) {
-      if (!this._sections) this._sections = {};
-      this._sections[name] = options.fn(this);
-      return null;
-    },
-  },
+  helpers,
 });
 const bodyParser = require("body-parser");
 // Configurações do app como referência de arquivos estáticos, view engine e etc...
@@ -58,6 +53,9 @@ app.get("/basicForm", handlers.basicForm);
 app.post("/robustForm/process", handlers.robustFormProcess);
 
 app.get("/robustForm", handlers.robustForm);
+
+// Partials
+app.get("/weather", handlers.weather, handlers.sections);
 
 app.use(handlers.notFound);
 app.use(handlers.serverError);
