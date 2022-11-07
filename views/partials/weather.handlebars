@@ -1,0 +1,22 @@
+<div class="l-weatherWidget">
+  {{#each partials.weatherContext}}
+    <div class="c-location">
+      <h3>{{location.name}}</h3>
+      <div class="c-description">
+        <a href="{{location.forecastUrl}}">
+          <img src="{{iconUrl}}" alt="{{weather}}" />
+        </a>
+        <p>
+          {{weather}},
+          {{temp}}
+        </p>
+      </div>
+    </div>
+  {{/each}}
+  <small>Source:
+    <a
+      href="https://www.weather.gov/documentation/services-web-
+api"
+    >
+      National Weather Service</a></small>
+</div>
