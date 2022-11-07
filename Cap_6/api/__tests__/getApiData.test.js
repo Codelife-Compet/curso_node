@@ -1,13 +1,13 @@
-const { tourController } = require("../../api/tours");
-const { Tour } = require("../../api/model/tour");
+const { tourController } = require("../tour/controller/tourController");
+const { Tour } = require("../tour/model/tour");
 const data = tourController.getData();
-const { getTours } = require("../tourController");
+const { getTours } = require("../tour/useCases/tourControllerUseCase");
 describe("toursApi", () => {
   it("A coleção de Tours deve possuir dados", () => {
     expect(data.length).toBeGreaterThan(0);
   });
 
-  it("A api possua um método que retorne um conjunto de dados", () => {
+  it("O controller possua um método que retorne um conjunto de dados", () => {
     const mock = jest.fn(() => tourController.getData());
     mock();
     expect(mock).toHaveReturnedWith(expect.arrayContaining([expect.any(Tour)]));

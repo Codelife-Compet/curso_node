@@ -29,11 +29,10 @@ app.use(
     secret: "abc",
   })
 );
-// Servindo as rotas configuradas anteriormente através dos handlers definidos no capítulo atual
 
 // exemplos do capítulo 6
 
-app.get("/echoHandlers", examples.echoHeaders);
+app.get("/echoHeaders", examples.echoHeaders);
 app.get("/greeting", examples.viewWithContent);
 app.get("/noLayout", examples.noLayout);
 app.get("/customLayout", examples.customLayout);

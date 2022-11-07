@@ -1,12 +1,9 @@
 exports.echoHeaders = (req, res) => {
-  res.type("text/plain");
-  const headers = Object.entries(req.headers).map(
-    ([key, value]) => `${key} : ${value}`
-  );
-  res.send(headers.join("\n"));
+  const headers = req.headers;
+  res.json(headers);
 };
 exports.viewWithContent = (req, res) => {
-  if (req.cookie && !req.cookies.userId) {
+  if (req.cookies && !req.cookies.userId) {
     res.cookie("userId", "123");
   }
   if (req.session && !req.session.username) {

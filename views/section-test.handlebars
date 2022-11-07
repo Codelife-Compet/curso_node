@@ -1,0 +1,22 @@
+{{#section 'head'}}
+<meta name="robots" content="noindex">
+{{/section}}
+<div class="l-container">
+  <div class="c-clicker active">
+    <p>Testando as seções do handlebars</p>
+  </div>
+  {{> weather}}
+</div>
+{{#section 'scripts'}}
+
+<script>
+  const active = document.querySelector(".active");
+  active?.addEventListener("click", (ev) => {
+    if (active?.classList.contains("active")) {
+      active?.classList.remove("active");
+      return;
+    }
+    active?.classList.add("active");
+  })
+</script>
+{{/section}}

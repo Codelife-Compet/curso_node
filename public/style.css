@@ -11,11 +11,10 @@
 a,
 a:visited,
 a:link{
-color: var(--bottom-color);
 text-decoration: none;
 }
 body {
-  background: var(--my-gradient);
+  background: var(--my-gradient) no-repeat;
   height: 100vh;
   width: 100vw;
 }
@@ -26,6 +25,7 @@ body {
   align-items: center;
   align-content: center;
   flex-direction: column;
+  width: 100vw;
 }
 
 .c-fortune {
@@ -116,7 +116,9 @@ align-items: center;
 .c-menu-item p:hover {
   opacity: 70%;
 }
-
+.c-menu-item>a{
+  color: var(--bottom-color);
+}
 .c-menu-logo img {
   height: 3.8rem;
   width: 3.8rem;
@@ -176,4 +178,40 @@ align-items: center;
 .c-button>button:hover{
   opacity: 0.7;
   cursor: pointer;
+}
+.active{
+  color: white;
+}
+.c-clicker:hover{
+  cursor: pointer;
+}
+.l-weatherWidget{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  justify-items: center;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+.c-location{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: black 1px solid;
+  border-radius: .8em;
+  margin: .8em;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.c-description{
+  display: flex;
+  align-items: center;
+  padding:1em; 
+}
+.c-description>a>img{
+  margin: 0em .8em 0em .8em;
+  border:black 2px solid;
+  border-radius: .2em;
+}
+.c-description>p{
+  font-size: small;
 }
