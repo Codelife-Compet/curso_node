@@ -10,6 +10,7 @@
         "cap4": "nodemon Cap_4/codelife.js",
         "cap5": "nodemon Cap_5/codelife.js",
         "cap6": "nodemon Cap_6/codelife.js",
+        "cap7": "nodemon Cap_7/codelife.js",
         "lint": "eslint Cap_5 --ext .js"
     },
     "repository": {
