@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/style.css">
   <title>CodeLife</title>
+  {{{_sections.head}}}
 </head>
 
 <body>
@@ -19,7 +20,8 @@
           </a>
         </div>
         <div class="c-menu-user">
-          <p>usuário logado</p>
+          <p>usuário logado: </p>
+          {{{_sections.menuUser}}}
         </div>
       </div>
     </div>
@@ -39,6 +41,6 @@
     </div>
   </nav>
   {{{body}}}
+  {{{_sections.scripts}}}
 </body>
-
 </html>

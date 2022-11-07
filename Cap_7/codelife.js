@@ -46,8 +46,7 @@ app.get("/greeting", handlers.greeting);
 app.get("/contact-error", handlers.contactError);
 app.get("/echoheaders", handlers.echoHeaders);
 app.get("/create-tours", handlers.createTours);
-app.use(handlers.notFound);
-app.use(handlers.serverError);
+app.get("/sections", handlers.sections);
 
 // Basic Form
 app.post("/basicForm/process", handlers.basicFormProcess);
@@ -59,6 +58,9 @@ app.get("/basicForm", handlers.basicForm);
 app.post("/robustForm/process", handlers.robustFormProcess);
 
 app.get("/robustForm", handlers.robustForm);
+
+app.use(handlers.notFound);
+app.use(handlers.serverError);
 
 // Iniciando o servidor
 require.main === module

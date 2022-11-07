@@ -1,6 +1,6 @@
 const fortune = require("./fortune");
 const codelifer = require("./codelifer");
-// const weather = require("/.weather");
+const weather = require("./weather");
 
 exports.home = (_req, res) => {
   res.render("home");
@@ -110,4 +110,11 @@ exports.robustFormProcess = (req, res) => {
 
 exports.robustForm = (req, res) => {
   res.render("robustForm");
+};
+
+// Sections
+
+exports.sections = (req, res) => {
+  const user = codelifer.getCodelifer();
+  res.render("section", { user });
 };

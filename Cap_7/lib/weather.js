@@ -1,7 +1,4 @@
-
-exports.weather() = () => {
-
-  const getWeatherData = () =>
+exports.weather = async () =>
   Promise.resolve([
     {
       location: {
@@ -34,4 +31,3 @@ exports.weather() = () => {
       temp: "55 F",
     },
   ]);
-}
