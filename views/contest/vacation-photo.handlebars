@@ -1,7 +1,7 @@
 <h2>Faça seu melhor! Suba uma imagem para concorrer ao nosso concurso de fotos!</h2>
 <div class="l-container">
   <div class="l-form">
-    <form role="form" id="newsletter-signup-form" method="post" enctype="multipart/form-data"
+    <form role="form" id="vacationPhotoContestForm" enctype="multipart/form-data" method="post"
       action="/contest/vacation-photo/{{year}}/{{month}}">
       <input type="hidden" name="_csrf" value="{{csrf}}">
       <div class="c-input">
@@ -22,3 +22,33 @@
     </form>
   </div>
 </div>
+{{#section "scripts"}}
+<script>
+  document
+    .getElementById("vacationPhotoContestForm")
+    .addEventListener("submit", (e) => {
+      e.preventDefault();
+      const body = new FormData(e.target);
+      const container = document.querySelector(".l-container");
+      const feedback = document.createElement("b");
+      const url = '/api/vacation-photo-contest/'+{{year}}+'/'+{{month}};
+      fetch(url, { method: "post", body })
+        .then((response) => {
+          if (response.status < 200 || response.status >= 300) {
+            throw new Error(` Requisição falhou com erro ${response.status}`);
+          }
+          return response.json();
+        })
+        .then((json) => {
+          feedback.innerHTML = "Obrigado por compartilhar sua fotografia!";
+          container.insertAdjacentElement("afterbegin", feedback);
+        })
+        .catch((err) => {
+          feedback.innerHTML =
+            "Ocorreu um erro ao processar sua imagem, tente novamente mais tarde";
+          container.insertAdjacentElement("afterbegin", feedback);
+        });
+    });
+
+</script>
+{{/section}}

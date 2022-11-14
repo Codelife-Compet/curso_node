@@ -20,3 +20,13 @@ exports.serverError = (_err, _req, res, _next) => {
   res.status(500);
   res.render("500");
 };
+exports.contestProcess = (req, res, fields, files) => {
+  console.log("field data :", fields);
+  console.log("files data :", files);
+  res.redirect(303, "/contest/thank-you");
+};
+exports.contestProcessAjax = (req, res, fields, files) => {
+  console.log("field data :", fields);
+  console.log("files data :", files);
+  res.send({ result: "success" });
+};
