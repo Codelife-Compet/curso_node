@@ -1,0 +1,26 @@
+<h2>Se inscreva na nossa newsletter para receber novidades sobre nosso projeto!</h2>
+<div class="l-conteiner">
+  <div class="l-form">
+    <form action="/newsletter-signup/process?form=newsletter" method="post" role="form" onsubmit="onsubmitForm">
+      <input type="hidden" name="_csrf" value="{{csrf}}">
+      <div class="c-input">
+        <label for="fieldName">Name</label>
+        <input type="text" id="fieldName" name="name">
+      </div>
+      <div class="c-input">
+        <label for="fieldEmail">Name</label>
+        <input type="email" id="fieldEmail" name="email" required>
+      </div>
+      <div class="c-button">
+        <button type="submit"> Submit</button>
+      </div>
+    </form>
+  </div>
+</div>
+{{#section 'scripts'}}
+<script>
+  function onsubmitForm() {
+    window.alert("formulário enviado!");
+  }
+</script>
+{{/section}}
