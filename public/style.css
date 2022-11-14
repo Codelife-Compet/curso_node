@@ -154,6 +154,9 @@ align-items: center;
   padding: 2em;
   background-color: cornflowerblue;
 }
+.l-form--horizontal{
+  flex-direction:row;
+}
 .c-input{
   display: flex;
   justify-content: space-between;

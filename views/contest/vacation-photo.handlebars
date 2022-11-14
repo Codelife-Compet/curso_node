@@ -1,0 +1,24 @@
+<h2>Faça seu melhor! Suba uma imagem para concorrer ao nosso concurso de fotos!</h2>
+<div class="l-container">
+  <div class="l-form">
+    <form role="form" id="newsletter-signup-form" method="post" enctype="multipart/form-data"
+      action="/contest/vacation-photo/{{year}}/{{month}}">
+      <input type="hidden" name="_csrf" value="{{csrf}}">
+      <div class="c-input">
+        <label for="fieldName">Name</label>
+        <input type="text" id="fieldName" name="name">
+      </div>
+      <div class="c-input">
+        <label for="fieldEmail">Email</label>
+        <input type="email" id="fieldEmail" name="email" required>
+      </div>
+      <div class="c-input">
+        <label for="image">Foto</label>
+        <input type="file" id="fieldPhoto" name="photo" accept="image/*" required>
+      </div>
+      <div class="c-button">
+        <button type="submit"> Registre-se</button>
+      </div>
+    </form>
+  </div>
+</div>
