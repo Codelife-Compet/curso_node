@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "description": "Curso node",
     "scripts": {
-        "api":"nodemon Cap_6/api/server.js",
+        "api": "nodemon Cap_6/api/server.js",
         "test": "jest --watch -o",
         "cap2": "nodemon Cap_2/index.js",
         "cap3": "nodemon Cap_3/codelife.js",
@@ -11,6 +11,7 @@
         "cap5": "nodemon Cap_5/codelife.js",
         "cap6": "nodemon Cap_6/examples/index.js",
         "cap7": "nodemon Cap_7/app.js",
+        "cap8": "nodemon Cap_8/codelife.js",
         "lint": "eslint Cap_5 --ext .js"
     },
     "repository": {
@@ -41,7 +42,6 @@
         "eslint-plugin-promise": "^6.0.1",
         "jest": "^29.1.2",
         "nodemon": "^2.0.20",
-        "portfinder": "^1.0.32",
         "prettier": "^2.7.1",
         "puppeteer": "^18.0.5"
     }
