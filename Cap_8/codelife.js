@@ -6,6 +6,8 @@ const handlers = require("./lib/handlers");
 const port = process.env.port || 3333;
 const helpers = require("./helpers");
 const newsletterRouter = require("./routes/newsletter");
+const apiRouter = require("./routes/api");
+
 const bodyParser = require("body-parser");
 const engineHandlebars = expressHandlebars.engine({
   defaultLayout: "main",
@@ -20,6 +22,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 // Usando rotas como middleware
 app.use("/newsletter-signup", newsletterRouter);
+app.use("/api", apiRouter);
 // Acesso às rotas da aplicação
 app.get("/", handlers.home);
 app.get("/about", handlers.about);

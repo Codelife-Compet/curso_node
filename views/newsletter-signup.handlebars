@@ -1,7 +1,7 @@
 <h2>Se inscreva na nossa newsletter para receber novidades sobre nosso projeto!</h2>
 <div class="l-container">
   <div class="l-form">
-    <form action="/newsletter-signup/process?form=newsletter" method="post" role="form" onsubmit="onsubmitForm">
+    <form role="form" id="newsletter-signup-form">
       <input type="hidden" name="_csrf" value="{{csrf}}">
       <div class="c-input">
         <label for="fieldName">Name</label>
@@ -19,8 +19,27 @@
 </div>
 {{#section 'scripts'}}
 <script>
-  function onsubmitForm() {
-    window.alert("formulário enviado!");
-  }
+ document.getElementById("newsletter-signup-form")
+ .addEventListener("submit",(e)=>{
+    e.preventDefault();
+    const form = e.target;
+    const body = JSON.stringify({
+      _csrf:form.elements._csrf.value,
+      name:form.elements.name.value,
+      email:form.elements.email.value,
+    })
+    const headers = {'Content-Type': "application/json"};
+    const container = document.querySelector(".l-container");
+    const feedback = document.createElement("b")
+    fetch("/api/newsletter-signup",{method:"post",body,headers})
+    .then(json=>{
+      feedback.innerHTML="Obrigado por se inscrever!"
+      container?.insertAdjacentElement("afterbegin",feedback);
+    })
+    .catch(err=>{
+      feedback.innerHTML="Foi mal deu um erro ai!"
+      container?.insertAdjacentElement("afterbegin",feedback)
+    })
+  })
 </script>
 {{/section}}
