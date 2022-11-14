@@ -5,9 +5,6 @@ router.get("/", (req, res) => {
     csrf: "CSRF token pra cross reference, ainda não implementado",
   });
 });
-router.get("/thank-you", (req, res) => {
-  res.render("thank-you");
-});
 router.post("/process", (req, res) => {
   const { _csrf, name, email } = req.body;
   const { form } = req.query;
@@ -15,6 +12,9 @@ router.post("/process", (req, res) => {
   console.log("Input name : ", name);
   console.log("Input email : ", email);
   console.log("Querystring Form : ", form);
-  res.status(204).send();
+  res.redirect(303, "thank-you");
+});
+router.get("/thank-you", (req, res) => {
+  res.render("thank-you");
 });
 module.exports = router;
