@@ -114,3 +114,4 @@ app.post('/upload-test', (req, res) => {
 });
 
 ```
+Claro, assim como antes, temos a possibilidade de utilizar requisições ajax com fetch API, o que torna o nosso trabalho muito mais fácil, para isso é necessário converter o formulário utilizado para um objeto formData, que faz com que o objeto fetch possa aceitá-lo diretamente como corpo da requisição. Finalizado, vamos pro capítulo 9, tratar de Cookies e Sessões.

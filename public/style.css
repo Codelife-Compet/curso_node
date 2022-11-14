@@ -168,6 +168,11 @@ align-items: center;
   margin-left: .5em;
   margin-right: .5em;
 }
+.c-input>input[type="file"]{
+  display: flex;
+  flex-direction: column;
+  font-size: small;
+}
 .c-button{
   display: flex;
   align-content: center;
