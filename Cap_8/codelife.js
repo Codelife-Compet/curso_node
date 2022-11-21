@@ -1,14 +1,11 @@
 const express = require("express");
 const path = require("path");
 const expressHandlebars = require("express-handlebars");
-const app = express();
-const handlers = require("./lib/handlers");
-const port = process.env.port || 3333;
 const helpers = require("./helpers");
-const newsletterRouter = require("./routes/newsletter");
-const apiRouter = require("./routes/api");
-const contestRouter = require("./routes/contest");
+const router = require("./routes");
 
+const app = express();
+const port = process.env.port || 3333;
 const bodyParser = require("body-parser");
 const engineHandlebars = expressHandlebars.engine({
   defaultLayout: "main",
@@ -22,17 +19,7 @@ app.use(express.static(path.join(__dirname, "../public")));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 // Usando rotas como middleware
-app.use("/newsletter-signup", newsletterRouter);
-app.use("/api", apiRouter);
-app.use("/contest", contestRouter);
-// Acesso às rotas da aplicação
-app.get("/", handlers.home);
-app.get("/about", handlers.about);
-app.get("/cookieSort", handlers.cookieSort);
-
-// Rotas de erro
-app.use(handlers.notFound);
-app.use(handlers.serverError);
+app.use(router);
 // Iniciando o servidor
 require.main === module
   ? app.listen(port, () =>

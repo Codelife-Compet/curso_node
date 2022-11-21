@@ -1,0 +1,12 @@
+const apiRouter = require("./api");
+const homeRouter = require("./home");
+const newsletterRouter = require("./newsletter");
+const middlewares = require("../middlewares");
+const { Router } = require("express");
+const router = Router();
+router.use("/", homeRouter);
+router.use("/api", apiRouter);
+router.use("/newsletter-signup", newsletterRouter);
+router.use(middlewares.notFound);
+router.use(middlewares.serverError);
+module.exports = router;

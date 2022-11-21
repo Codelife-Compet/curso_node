@@ -6,4 +6,4 @@ const weatherMiddleware = async (req, res, next) => {
   res.locals.partials.weatherContext = await getWeatherData();
   next();
 };
-module.exports = weatherMiddleware;
+module.exports = { weatherMiddleware };

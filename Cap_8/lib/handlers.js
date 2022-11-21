@@ -12,14 +12,7 @@ exports.cookieSort = (_req, res) => {
     codelifer: codelifer.getCodelifer(),
   });
 };
-exports.notFound = (_req, res) => {
-  res.status(404);
-  res.render("404");
-};
-exports.serverError = (_err, _req, res, _next) => {
-  res.status(500);
-  res.render("500");
-};
+
 exports.contestProcess = (req, res, fields, files) => {
   console.log("field data :", fields);
   console.log("files data :", files);
