@@ -246,6 +246,17 @@ Dependência | comando de uso/instalação | Exemplo de utilização
 :---:|:---:|:---:
 cookieParser|`npm install cookie-parser`| `app.use(cookieParser(process.env.secret))`
 expressSession|`npm install express-session`|`app.use(expressSession({resave:false,saveUnintialized:false,secret:process.env.secret}))`
+### Capítulo 7
+
+Sem dependências adicionais
+
+### Capítulo 8
+
+Dependência | comando de uso/instalação | Exemplo de utilização
+:---:|:---:|:---:
+`Multer`|`npm install multer`| `const uploadPhoto = multer(uploadConfig("./public/tmp"))`
+`Multiparty`|`npm install multiparty`|`  const form = new multiparty.Form()`
+
 ## Arquitetura dos exemplos
 
 Cada capítulo possuirá notas importantes para serem lidas posteriormente, bem como a estrutura dos exemplos contidos no livro.
