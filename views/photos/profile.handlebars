@@ -1,16 +1,10 @@
-<h2>Faça seu melhor! Suba uma imagem para concorrer ao nosso concurso de fotos!</h2>
+<h2>Faça upload de uma foto para vê-la abaixo</h2>
 <div class="l-container">
+  <div class="l-profile-photo ">
+    <img src=""class="c-profile-photo hidden">
+  </div>
   <div class="l-form">
-    <form role="form" id="vacationPhotoContestForm" enctype="multipart/form-data">
-      <input type="hidden" name="_csrf" value="{{csrf}}">
-      <div class="c-input">
-        <label for="fieldName">Name</label>
-        <input type="text" id="fieldName" name="name">
-      </div>
-      <div class="c-input">
-        <label for="fieldEmail">Email</label>
-        <input type="email" id="fieldEmail" name="email" required>
-      </div>
+    <form role="form" id="uploadPhoto" enctype="multipart/form-data">
       <div class="c-input">
         <input type="file" id="fieldPhoto" name="photo" accept="image/*" required>
       </div>
@@ -23,13 +17,13 @@
 {{#section "scripts"}}
 <script>
   document
-    .getElementById("vacationPhotoContestForm")
+    .getElementById("uploadPhoto")
     .addEventListener("submit", (e) => {
       e.preventDefault();
       const body = new FormData(e.target);
       const container = document.querySelector(".l-container");
-      const feedback = document.createElement("b");
-      const url = '/api/vacation-photo-contest/'+{{year}}+'/'+{{month}};
+      const photo = document.querySelector("img.c-profile-photo")
+      const url = '/api/upload-photo/';
       fetch(url, { method: "post", body })
         .then((response) => {
           if (response.status < 200 || response.status >= 300) {
@@ -38,11 +32,12 @@
           return response.json();
         })
         .then((json) => {
-          feedback.innerHTML = "Obrigado por compartilhar sua fotografia!";
-          container.insertAdjacentElement("afterbegin", feedback);
+          photo.setAttribute("src",`./tmp/${json}`)
+          photo.classList.remove("hidden")
         })
         .catch((err) => {
-          feedback.innerHTML =
+          const feedback=document.createElement("b");
+          feedback.innerHTML=
             "Ocorreu um erro ao processar sua imagem, tente novamente mais tarde";
           container.insertAdjacentElement("afterbegin", feedback);
         });
