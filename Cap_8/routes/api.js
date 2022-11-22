@@ -1,18 +1,14 @@
 const express = require("express");
 const router = express.Router();
-const multiparty = require("multiparty");
+const multer = require("multer");
 const {
-  contestProcessAjax,
   newsletterSignupProcessAjax,
+  vacationPhotoProcessAjax,
+  uploadPhotoProcess,
 } = require("../lib/handlers");
+const { upload: uploadConfig } = require("../config/upload");
+const uploadPhoto = multer(uploadConfig("./public/tmp"));
 router.post("/newsletter-signup", newsletterSignupProcessAjax);
-router.post("/vacation-photo-contest/:year/:month", (req, res) => {
-  const form = new multiparty.Form();
-  form.parse(req, (err, fields, files) => {
-    if (err) {
-      return res.status(500).send({ error: err.message });
-    }
-    contestProcessAjax(req, res, fields, files);
-  });
-});
+router.post("/vacation-photo-contest/:year/:month", vacationPhotoProcessAjax);
+router.post("/upload-photo", uploadPhoto.single("photo"), uploadPhotoProcess);
 module.exports = router;
