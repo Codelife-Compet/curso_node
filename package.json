@@ -3,11 +3,15 @@
     "version": "1.0.0",
     "description": "Curso node",
     "scripts": {
-        "test": "jest",
+        "api": "nodemon Cap_6/api/server.js",
+        "test": "jest --watch -o",
         "cap2": "nodemon Cap_2/index.js",
         "cap3": "nodemon Cap_3/codelife.js",
         "cap4": "nodemon Cap_4/codelife.js",
         "cap5": "nodemon Cap_5/codelife.js",
+        "cap6": "nodemon Cap_6/examples/index.js",
+        "cap7": "nodemon Cap_7/app.js",
+        "cap8": "nodemon Cap_8/codelife.js",
         "lint": "eslint Cap_5 --ext .js"
     },
     "repository": {
@@ -21,20 +25,25 @@
     },
     "homepage": "https://github.com/Codelife-Compet/curso_node#readme",
     "dependencies": {
+        "body-parser": "^1.20.1",
+        "cookie-parser": "^1.4.6",
         "express": "^4.18.1",
-        "express-handlebars": "^6.0.6"
+        "express-handlebars": "^6.0.6",
+        "express-session": "^1.17.3",
+        "multer": "^1.4.5-lts.1",
+        "multiparty": "^4.2.3"
     },
     "devDependencies": {
         "eslint": "^8.23.1",
         "eslint-config-prettier": "^8.5.0",
         "eslint-config-standard": "^17.0.0",
         "eslint-plugin-import": "^2.26.0",
+        "eslint-plugin-jest": "^27.1.2",
         "eslint-plugin-n": "^15.3.0",
         "eslint-plugin-prettier": "^4.2.1",
         "eslint-plugin-promise": "^6.0.1",
         "jest": "^29.1.2",
         "nodemon": "^2.0.20",
-        "portfinder": "^1.0.32",
         "prettier": "^2.7.1",
         "puppeteer": "^18.0.5"
     }

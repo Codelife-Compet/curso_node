@@ -3,7 +3,7 @@ const express = require("express");
 const expressHandlebars = require("express-handlebars");
 const app = express();
 const port = process.env.PORT || 3000;
-
+const path = require("path");
 const engineHandlebars = expressHandlebars.engine({
   defaultLayout: "main",
 });
@@ -19,12 +19,12 @@ const fortunes = [
   "Explique uma parte do código",
 ];
 const codelifers = ["Henrique", "Richard", "Natália", "Lucas", "Francisco"];
-app.use(express.static(__dirname.join("/public")));
+app.use(express.static(path.join(__dirname, "../public")));
 
 app.get("/", (req, res) => {
   res.render("home");
 });
-app.set("views", __dirname.join("/views"));
+app.set("views", path.join(__dirname, "../views"));
 
 app.get("/fortunes", (req, res) => {
   const codelifer = codelifers[Math.floor(Math.random() * codelifers.length)];

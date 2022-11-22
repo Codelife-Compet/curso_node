@@ -1,0 +1,24 @@
+<div class="l-container">
+  {{#if style}}
+  <div class="l-card" style={{style}}>
+
+    <div class="c-user">
+      <p>
+        {{#if userId}}
+        userId : {{userId}}
+        {{/if}}
+      </p>
+      <p>
+        {{#if username}}
+        username : {{username}}
+        {{/if}}
+      </p>
+    </div>
+    {{#if message}}
+    <div class="c-message">
+      <p> message : {{message}}</p>
+    </div>
+    {{/if}}
+  </div>
+  {{/if}}
+</div>
