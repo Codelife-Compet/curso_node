@@ -1,6 +1,19 @@
 const fortune = require("./fortune");
 const codelifer = require("./codelifer");
 const multiparty = require("multiparty");
+
+const contestProcessAjax = (req, res, fields, files) => {
+  console.log("field data :", fields);
+  console.log("files data :", files);
+  res.send({ result: "success" });
+};
+
+const contestProcess = (req, res, fields, files) => {
+  console.log("field data :", fields);
+  console.log("files data :", files);
+  res.redirect(303, "/contest/thank-you");
+};
+
 exports.home = (_req, res) => {
   res.render("home");
 };
@@ -58,15 +71,14 @@ exports.newsletterSignupProcessAjax = (req, res) => {
   console.log("Querystring Form : ", form);
   res.send({ result: "success" });
 };
-const contestProcess = (req, res, fields, files) => {
-  console.log("field data :", fields);
-  console.log("files data :", files);
-  res.redirect(303, "/contest/thank-you");
-};
-exports.contestProcessAjax = (req, res, fields, files) => {
-  console.log("field data :", fields);
-  console.log("files data :", files);
-  res.send({ result: "success" });
+exports.vacationPhotoProcessAjax = (req, res) => {
+  const form = new multiparty.Form();
+  form.parse(req, (err, fields, files) => {
+    if (err) {
+      return res.status(500).send({ error: err.message });
+    }
+    contestProcessAjax(req, res, fields, files);
+  });
 };
 exports.vacationPhotoProcess = (req, res) => {
   console.log();
@@ -77,4 +89,15 @@ exports.vacationPhotoProcess = (req, res) => {
     }
     contestProcess(req, res, fields, files);
   });
+};
+exports.uploadPhotoProcess = (req, res) => {
+  const photo = req.file.filename;
+  if (!photo) {
+    return res.status(400).json({ error: "Error, File don't exists" });
+  }
+  console.log(photo);
+  return res.json(photo);
+};
+exports.photos = (req, res) => {
+  res.render("photos/profile");
 };
