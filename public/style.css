@@ -223,3 +223,18 @@ align-items: center;
 .c-description>p{
   font-size: small;
 }
+.c-profile-photo{
+  width: 4rem;
+  height: 4rem;
+  border-radius: 100%;
+  padding: .2rem;
+}
+.hidden{
+  display: none;
+}
+.l-profile-photo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin:.2em;
+}
