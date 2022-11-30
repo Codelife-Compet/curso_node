@@ -36,7 +36,7 @@
           photo.classList.remove("hidden")
         })
         .catch((err) => {
-          const feedback=document.createElement("b");
+          const feedback=document.createElement("strong");
           feedback.innerHTML=
             "Ocorreu um erro ao processar sua imagem, tente novamente mais tarde";
           container.insertAdjacentElement("afterbegin", feedback);

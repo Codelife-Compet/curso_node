@@ -7,6 +7,7 @@ const {
   uploadPhotoProcess,
 } = require("../lib/handlers");
 const { upload: uploadConfig } = require("../config/upload");
+
 const uploadPhoto = multer(uploadConfig("./public/tmp"));
 router.post("/newsletter-signup", newsletterSignupProcessAjax);
 router.post("/vacation-photo-contest/:year/:month", vacationPhotoProcessAjax);

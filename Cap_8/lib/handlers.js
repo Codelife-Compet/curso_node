@@ -38,6 +38,7 @@ exports.vacation = (req, res) => {
   res.render("contest/vacation-photo", {
     year: now.getFullYear(),
     month: now.getMonth() + 1,
+    csrf: "not implemented",
   });
 };
 exports.newsletterSignupAjax = (req, res) => {
@@ -91,12 +92,13 @@ exports.vacationPhotoProcess = (req, res) => {
   });
 };
 exports.uploadPhotoProcess = (req, res) => {
-  const photo = req.file.filename;
-  if (!photo) {
+  const filename = req.file.filename;
+  const file = req.file;
+  if (!filename) {
     return res.status(400).json({ error: "Error, File don't exists" });
   }
-  console.log(photo);
-  return res.json(photo);
+  console.log(filename, file);
+  return res.json(filename);
 };
 exports.photos = (req, res) => {
   res.render("photos/profile");

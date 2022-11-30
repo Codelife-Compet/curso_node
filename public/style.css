@@ -13,6 +13,12 @@ a:visited,
 a:link{
 text-decoration: none;
 }
+a{
+  color: var(--bottom-color);
+}
+a:hover{
+  opacity: 80%;
+}
 body {
   background: var(--my-gradient) no-repeat;
   height: 100vh;
@@ -20,6 +26,7 @@ body {
 }
 
 .l-container {
+  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -182,9 +189,12 @@ align-items: center;
 .c-button>button{
   background-color: black;
   color: #FFF;
+  border:none;
+  border-radius:5%;
+  padding: .2em .5em;
 }
 .c-button>button:hover{
-  opacity: 0.7;
+  opacity: 0.9;
   cursor: pointer;
 }
 .active{
@@ -237,4 +247,70 @@ align-items: center;
   justify-content: center;
   align-items: center;
   margin:.2em;
+}
+.c-flash_content {
+  z-index: 999;
+  position: relative;
+  top: -3%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-height: 90%;
+  overflow: auto;
+  box-sizing: border-box;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.7);
+  border-radius: 4px;
+  width: 480px; /* This just a default width */
+}
+.c-flash_content > h2 {
+  font-size: 16px;
+  font-weight: 200;
+  margin: .2em 0 40px;
+  text-align: center;
+}
+.c-flash_content >p{
+  font-size: 10px;
+  line-height: 1.4em;
+}
+.c-close_modal {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  opacity: 0.7;
+  background: none;
+  border: none;
+  transition: opacity 0.2s ease;
+}
+
+.c-flash-danger {
+  background-color:lightpink;
+  color: red;
+}
+.c-flash-success{
+  background-color:lightgreen;
+  color: green;
+}
+.c-flash-alert{
+  background-color:lightyellow;
+  color: black;
+}
+.c-flash-info{
+  background-color:zinc;
+  color: black;
+}
+
+.c-progress-bar{
+   position: relative;
+   width: fit-content;
+   top:0;
+   overflow: hidden;
+   height: .1em;
+   margin-bottom: .8em;
+   background-color:currentColor;
+   animation: progress-animation 3s ;
+}
+@keyframes progress-animation{
+    0% { width: 0%; } 
+    100% { width: 100%}
 }

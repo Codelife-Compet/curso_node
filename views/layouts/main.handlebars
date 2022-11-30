@@ -20,7 +20,12 @@
           </a>
         </div>
         <div class="c-menu-user">
-          <p>usuário logado</p>
+          {{#if username}}
+          <span>{{username}}</span>
+          {{/if}}
+          {{#unless username}}
+          <a href="/login">Faça seu login</a>
+          {{/unless}}
         </div>
       </div>
     </div>
@@ -36,11 +41,26 @@
             <p>cookieSort</p>
           </a>
         </div>
+        {{#if username}}
+        <div class="c-menu-item">
+          <a href="/auth/logout" data-test-id="logout">
+            <p>logout</p>
+          </a>
+        </div>
+        {{/if}}
       </div>
     </div>
   </nav>
   {{{body}}}
+  {{#if flash}}
+      <div class="c-flash_content c-flash-{{flash.type}}">
+      <div class="c-progress-bar"></div>
+        <h2>{{flash.intro}}</h2>
+        <p style="text-align: center;">{{{flash.message}}}</p>
+      </div>
+  {{/if}}
   {{{_sections.scripts}}}
+  <script src="scripts/modal.js"></script>
 </body>
 
 </html>
